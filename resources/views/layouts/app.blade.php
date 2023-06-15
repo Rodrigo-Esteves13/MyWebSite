@@ -18,10 +18,13 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-dark shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'R.ME') }}
+                <a class="navbar-brand d-flex" href="{{ url('/') }}">
+                <div style="display: flex; align-items: center;">
+                <img src="/svg/FireLogo.svg" style="height: 20px; border-right: 1px solid #333; padding-right: 5px;">
+                <div style="padding-left: 5px;">R.ME</div>
+                </div>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
