@@ -1,4 +1,4 @@
-@extends('layouts.header')
+@extends('home')
 
 @section('content')
 <div class="container">

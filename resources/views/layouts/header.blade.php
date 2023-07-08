@@ -25,11 +25,34 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background-color: #333;
+        background: linear-gradient(to right, #505050, #B0B0B0);
+        border-radius: 8px;
         color: white;
         height: 60px;
         padding: 0 20px;
+        margin-top: 10px;
+        margin-right: 15px;
+        margin-left: 15px;
+        border-color: black 2px;
+        /* animation: borderAnimation 5s infinite linear; */
     }
+    /* @keyframes borderAnimation {
+        0% {
+            border: 2px solid red;
+        }
+        25% {
+            border: 2px solid blue;
+        }
+        50% {
+            border: 2px solid red;
+        }
+        75% {
+            border: 2px solid blue;
+        }
+        100% {
+            border: 2px solid red;
+        }
+    } */
 
     .logo {
         font-size: 24px;
@@ -102,6 +125,7 @@
         background-color: #f1f1f1;
     }
     </style>
+        @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
     <div class="header">
@@ -160,97 +184,3 @@
     </script>
 </body>
 </html>
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'R.ME') }}</title>
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-
-
-    <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-</head>
-<body>
-<div id="app">
-    <nav class="navbar navbar-expand-md navbar-light bg-dark shadow-sm">
-        <div class="container">
-            <a class="navbar-brand d-flex" href="{{ url('/') }}">
-                <div style="display: flex; align-items: center;">
-                    <img src="/svg/FireLogo.svg" style="height: 20px; border-right: 1px solid #333; padding-right: 5px;">
-                    <div style="padding-left: 5px;">R.ME</div>
-                </div>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <!-- Left Side Of Navbar -->
-                <ul class="navbar-nav me-auto">
-
-                </ul>
-
-                <!-- Right Side Of Navbar -->
-                <ul class="navbar-nav ms-auto">
-                    <!-- Authentication Links -->
-                    @guest
-                        @if (Route::has('login'))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                        @endif
-
-                        @if (Route::has('register'))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                            </li>
-                        @endif
-                    @else
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }}
-                            </a>
-
-                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('profile.edit') }}">
-                                    {{ __('Edit Profile') }}
-                                </a>
-
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
-
-                                <!-- Add more dropdown items as needed -->
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </div>
-                        </li>
-                    @endguest
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?php echo url('/projects'); ?>">My Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?php echo url('/chat'); ?>">Chat with me</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <main class="py-4">
-        @yield('content')
-    </main>
-</div>
