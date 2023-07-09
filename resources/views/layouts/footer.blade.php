@@ -9,17 +9,24 @@
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 </head>
-<body>
-</body>
     <!-- Your page content here -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
-    <footer>
-        <div class="social-media">
-            <ul>
-                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-            </ul>
+
+
+     <footer>
+        <div class="logo-section">
+            <div class="logos">
+                <i class="fab fa-instagram"></i>
+                <span class="app-name">Instagram</span>
+            </div>
+            <div class="logos">
+                <i class="fab fa-linkedin"></i>
+                <span class="app-name">LinkedIn</span>
+            </div>
+        </div>
+        <div class="black-section">
+            <p>&copy; 2023 R.ME. All rights reserved.</p>
         </div>
     </footer>
 </html>

@@ -1,5 +1,23 @@
 body {
-margin: 0;
-padding: 0;
-background-color: #002D62;
+        background-color: #002D62;
+        font-family: Arial, sans-serif;
+        color: #f1f1f1;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
 }
+
+    .containers {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start; /* Updated to align to the top */
+        height: 100vh;
+        overflow: auto;
+    }
+
+    .big-text {
+        font-size: 48px;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 20vh; /* Added margin-top to move it up */
+    }

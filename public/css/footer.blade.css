@@ -1,24 +1,59 @@
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #002D62;
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    overflow: auto;
 }
+
+.big-text {
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20vh;
+}
+
 footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 20px;
 }
-.social-media {
-    text-align: center;
-    margin-top: 20px;
-}
-.social-media ul {
-    padding: 0;
-    margin: 0;
-}
-.social-media ul li {
-    display: inline-block;
-    margin-right: 20px;
-}
-.social-media ul li a {
+
+.logos {
+    display: flex;
+    align-items: center;
+    margin: 0 100px;
     color: white;
-    font-size: 40px;
+    font-size: 20px;
+}
+
+.logos i {
+    margin-right: 10px;
+    font-size: 28px; /* Increased size */
+}
+
+.app-name {
+    font-size: 20px;
+    margin-left: 10px; /* Added space between logo and text */
+}
+
+.black-section {
+    background-color: black;
+    text-align: center;
+    padding: 20px;
+}
+
+.black-section p {
+    color: white;
+    font-size: 14px;
+    margin: 0;
 }
