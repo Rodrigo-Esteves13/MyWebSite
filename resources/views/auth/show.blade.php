@@ -1,6 +1,6 @@
-@extends('layouts.header')
-
-@section('content')
+@include('layouts.header')
+@include('layouts.body')
+@include('layouts.footer')
     <div class="container">
         <h1>User Profile</h1>
         
@@ -10,4 +10,3 @@
             <!-- Display other profile data as needed -->
         </div>
     </div>
-@endsection

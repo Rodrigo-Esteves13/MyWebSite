@@ -1,0 +1,24 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #002D62;
+}
+footer {
+    padding: 20px;
+}
+.social-media {
+    text-align: center;
+    margin-top: 20px;
+}
+.social-media ul {
+    padding: 0;
+    margin: 0;
+}
+.social-media ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+.social-media ul li a {
+    color: white;
+    font-size: 40px;
+}

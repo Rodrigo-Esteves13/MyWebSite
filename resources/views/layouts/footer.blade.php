@@ -5,34 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>R.ME</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="stylesheet" href="{{ asset('css/footer.blade.css') }}">
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #002D62;
-        }
-        footer {
-            padding: 20px;
-        }
-        .social-media {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .social-media ul {
-            padding: 0;
-            margin: 0;
-        }
-        .social-media ul li {
-            display: inline-block;
-            margin-right: 20px;
-        }
-        .social-media ul li a {
-            color: white;
-            font-size: 40px;
-        }
-    </style>
 </head>
 <body>
 </body>
