@@ -1,7 +1,4 @@
 @include('layouts.header')
-@include('layouts.body')
-@include('layouts.footer')
-
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -10,19 +7,17 @@
     <title>R.ME</title>
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-    <style>
-        /* Your custom styles here */
-    </style>
+    <link rel="stylesheet" href="{{ asset('css/loginRegister.body.blade.css') }}">
 </head>
 <body>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">{{ __('Login') }}</div>
-                    <div class="card-body">
-                        <form method="POST" action="{{ route('login') }}">
-                            @csrf
+<div class="loginRegister-container">
+<div class="border"></div>
+  <div class="segment"></div>
+        <div class="card">
+            <div class="card-header">{{ __('Login') }}</div>
+            <div class="card-body">
+                <form method="POST" action="{{ route('login') }}">
+                    @csrf
                             <div class="row mb-3">
                                 <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
                                 <div class="col-md-6">
@@ -75,3 +70,4 @@
     </div>
 </body>
 </html>
+@include('layouts.footer')

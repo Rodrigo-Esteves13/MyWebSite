@@ -2,6 +2,8 @@
 <?php
     use Illuminate\Support\Facades\Route;
     use Illuminate\Support\Facades\Auth;
+    $isLoginPage = Route::currentRouteName() === 'login';
+    $isRegisterPage = Route::currentRouteName() === 'register';
 ?>
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -18,11 +20,22 @@
 <body>
     <div class="header">
         <a href="{{ route('welcome') }}" class="logo">
-            <div class="logo-text">R.ME</div>
+            <div class="logo-text" style="color: white; text-decoration: none;">R.ME</div>
             <div class="separator"></div>
             <img src="/svg/FireLogo.svg" alt="Logo">
         </a>
         <nav class="header__nav">
+            <?php if (!$isLoginPage && !$isRegisterPage && !Auth::check()) : ?>
+                <a class="nav-link" href="<?php echo route('login'); ?>"><?php echo __('Login'); ?></a>
+                <span class="separator"></span>
+                <?php if (Route::has('register')) : ?>
+                    <a class="nav-link" href="<?php echo route('register'); ?>"><?php echo __('Register'); ?></a>
+                    <span class="separator"></span>
+                <?php endif; ?>
+            <?php endif; ?>
+            <a href="<?php echo url('/projects'); ?>">My Projects</a>
+            <span class="separator"></span>
+            <a href="<?php echo url('/chat'); ?>">Chat with me</a>
             <?php if (Route::has('login')) : ?>
                 <?php if (Auth::check()) : ?>
                     <div class="dropdown">
@@ -43,19 +56,8 @@
                         </div>
                     </div>
                     <span class="separator"></span>
-                <?php else : ?>
-                            <a class="nav-link" href="<?php echo route('login'); ?>"><?php echo __('Login'); ?></a>
-                            <span class="separator"></span>
-                        <?php if (Route::has('register')) : ?>
-                                <a class="nav-link" href="<?php echo route('register'); ?>"><?php echo __('Register'); ?></a>
-                                <span class="separator"></span>
-                        <?php endif; ?>
-                    </ul>
                 <?php endif; ?>
             <?php endif; ?>
-            <a href="<?php echo url('/projects'); ?>">My Projects</a>
-            <span class="separator"></span>
-            <a href="<?php echo url('/chat'); ?>">Chat with me</a>
         </nav>
     </div>
 

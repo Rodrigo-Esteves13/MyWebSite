@@ -37,6 +37,8 @@
     margin-right: 10px;
     display: flex;
     align-items: center;
+    color: white; /* Add this line to set the text color to white */
+    text-decoration: none; /* Add this line to remove the underline */
 }
 
 .logo img {
@@ -44,6 +46,7 @@
     height: 24px;
     margin-right: 5px;
 }
+
 
 .separator {
     width: 1px;
