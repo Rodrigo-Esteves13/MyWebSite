@@ -110,3 +110,7 @@ button[type="submit"]:hover {
     z-index: 2;
     /* Your existing header styles */
 }
+a {
+    text-decoration: none;
+    color: inherit;
+}
