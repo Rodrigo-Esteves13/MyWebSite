@@ -15,18 +15,18 @@
     <footer>
         <div class="logo-section">
             <div class="logos">
-                <a href="https://www.instagram.com/esteves_rodrigo99/" target="_blank" rel="noopener noreferrer">
+                <a style="color: white; text-decoration: none;" href="https://www.instagram.com/esteves_rodrigo99/" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a href="https://www.instagram.com/esteves_rodrigo99/" target="_blank" rel="noopener noreferrer">
+                <a style="color: white; text-decoration: none;" href="https://www.instagram.com/esteves_rodrigo99/" target="_blank" rel="noopener noreferrer">
                     <span class="app-name">Instagram</span>
                 </a>
             </div>
             <div class="logos">
-                <a href="https://www.linkedin.com/in/rodrigo-esteves99/" target="_blank" rel="noopener noreferrer">
+                <a style="color: white; text-decoration: none;" href="https://www.linkedin.com/in/rodrigo-esteves99/" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-linkedin"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/rodrigo-esteves99/" target="_blank" rel="noopener noreferrer">
+                <a style="color: white; text-decoration: none;" href="https://www.linkedin.com/in/rodrigo-esteves99/" target="_blank" rel="noopener noreferrer">
                     <span class="app-name">LinkedIn</span>
                 </a>
             </div>
