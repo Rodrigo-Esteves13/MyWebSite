@@ -57,6 +57,55 @@ setTimeout(function () {
     document.getElementById('popup').style.display = 'block';
   }
 }, 500);
+
+function formatAmountInput(input) {
+  var inputValue = input.value;
+  var numberValue = parseFloat(inputValue.replace(/[^0-9]/g, ''));
+  var formattedValue = (numberValue / 100).toFixed(2);
+
+  if (isNaN(numberValue)) {
+    input.value = '0.00';
+  } else {
+    input.value = formattedValue;
+  }
+}
+
+$(function() {
+  var input = "";
+
+  $("#customAmount").keydown(function(e) {
+    if (e.keyCode == 8 && input.length > 0) {
+      input = input.slice(0, input.length - 1);
+      $(this).val(formatNumber(input));
+    } else {
+      var key = getKeyValue(e.keyCode);
+      if (key) {
+        input += key;
+        $(this).val(formatNumber(input));
+      }
+    }
+    return false;
+  });
+
+  function getKeyValue(keyCode) {
+    if (keyCode > 57) {
+      keyCode -= 48;
+    }
+    if (keyCode >= 48 && keyCode <= 57) {
+      return String.fromCharCode(keyCode);
+    }
+  }
+
+  function formatNumber(input) {
+    if (isNaN(parseFloat(input))) {
+      return "0.00";
+    }
+    var num = parseFloat(input);
+    return (num / 100).toFixed(2);
+  }
+});
+
+
 window.addEventListener('DOMContentLoaded', function () {
   var buyCoffeeLink = document.querySelector('.buy-coffee');
   buyCoffeeLink.addEventListener('click', function (event) {
