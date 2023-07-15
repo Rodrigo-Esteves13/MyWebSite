@@ -46,6 +46,9 @@
                     <a class="dropdown-item" href="{{ route('profile.edit') }}">
                         Edit Profile
                     </a>
+                    <a class="dropdown-item" href="{{ route('profile.show', Auth::user()) }}">
+                        Show Profile
+                    </a>
                     <a class="dropdown-item" href="{{ route('logout') }}"
                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         Logout
@@ -62,6 +65,7 @@
         <a href="{{ url('/chat') }}">Chat with me</a>
     </nav>
 </div>
+
 
     <!-- JavaScript code -->
     <script src="{{ asset('js/popup.js') }}"></script>

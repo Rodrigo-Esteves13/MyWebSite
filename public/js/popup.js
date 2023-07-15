@@ -5,10 +5,13 @@ var popupDisplayed = localStorage.getItem('popupDisplayed');
 var headerOptionClicked = false;
 
 // Add an event listener to the header option
-document.querySelector('.buy-coffee').addEventListener('click', function () {
-  headerOptionClicked = true;
-  openPopup();
-});
+var buyCoffeeLink = document.querySelector('.buy-coffee');
+if (buyCoffeeLink) {
+  buyCoffeeLink.addEventListener('click', function (event) {
+    headerOptionClicked = true;
+    openPopup();
+  });
+}
 
 // Function to handle the initial display of the popup
 function handleInitialPopupDisplay() {
@@ -50,19 +53,28 @@ function handlePopupSubmit() {
 
 // Function to close the popup
 function closePopup() {
-  document.getElementById('popup').style.display = 'none';
+  var popup = document.getElementById('popup');
+  if (popup) {
+    popup.style.display = 'none';
+  }
 }
 
 // Function to open the popup
 function openPopup() {
-  document.getElementById('popup').style.display = 'block';
+  var popup = document.getElementById('popup');
+  if (popup) {
+    popup.style.display = 'block';
+  }
 }
 
 // Add event listener to the form submission
-document.querySelector('.popup-content form').addEventListener('submit', function (event) {
-  event.preventDefault();
-  handlePopupSubmit();
-});
+var popupForm = document.querySelector('.popup-content form');
+if (popupForm) {
+  popupForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+    handlePopupSubmit();
+  });
+}
 
 // Function to validate the custom amount input
 function isValidAmount(amount) {
@@ -130,11 +142,11 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-
 window.addEventListener('DOMContentLoaded', function () {
-  var buyCoffeeLink = document.querySelector('.buy-coffee');
-  buyCoffeeLink.addEventListener('click', function (event) {
+  if (buyCoffeeLink) {
+    buyCoffeeLink.addEventListener('click', function (event) {
       event.preventDefault();
       openPopup();
-  });
+    });
+  }
 });

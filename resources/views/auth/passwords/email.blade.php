@@ -1,7 +1,14 @@
 @include('layouts.header')
-@include('layouts.body')
-@include('layouts.footer')
-<div class="container">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REMS</title>
+    <link rel="stylesheet" href="{{ asset('css/loginRegister.body.blade.css') }}">
+</head>
+<body>
+<div class="loginRegister-container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -44,3 +51,5 @@
         </div>
     </div>
 </div>
+</body>
+</html>
