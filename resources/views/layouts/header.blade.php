@@ -10,7 +10,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>R.ME</title>
+    <title>REMS</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{ asset('css/header.blade.css') }}">
     <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -21,7 +21,7 @@
 <body>
 <div class="header">
     <a href="{{ route('welcome') }}" class="logo">
-        <div class="logo-text" style="color: white; text-decoration: none;">R.ME</div>
+        <div class="logo-text" style="color: white; text-decoration: none;">REMS</div>
         <div class="separator"></div>
         <img src="/svg/FireLogo.svg" alt="Logo">
     </a>

@@ -1,21 +1,33 @@
 // Check if the popup has already been displayed
-if (!localStorage.getItem('popupDisplayed')) {
-  // Check if the user has clicked on the header option
-  var headerOptionClicked = false;
+var popupDisplayed = localStorage.getItem('popupDisplayed');
 
-  // Add an event listener to the header option
-  document.querySelector('.buy-coffee').addEventListener('click', function() {
-    headerOptionClicked = true;
-  });
+// Check if the user has clicked on the header option
+var headerOptionClicked = false;
 
-  // Add an event listener to the window load event
-  window.addEventListener('load', function () {
-    // Show the popup if it's the first visit or header option is clicked
-    if (!localStorage.getItem('popupDisplayed') || headerOptionClicked) {
-      document.getElementById('popup').style.display = 'block';
-    }
-  });
+// Add an event listener to the header option
+document.querySelector('.buy-coffee').addEventListener('click', function () {
+  headerOptionClicked = true;
+  openPopup();
+});
+
+// Function to handle the initial display of the popup
+function handleInitialPopupDisplay() {
+  // Show the popup if it's the first visit or header option is clicked
+  if (!popupDisplayed || headerOptionClicked) {
+    openPopup();
+  }
 }
+
+// Function to handle the window load event
+function handleWindowLoad() {
+  handleInitialPopupDisplay();
+
+  // Set a flag to indicate that the popup has been displayed
+  localStorage.setItem('popupDisplayed', true);
+}
+
+// Add event listener to the window load event
+window.addEventListener('load', handleWindowLoad);
 
 // Function to handle the popup form submission
 function handlePopupSubmit() {
@@ -33,11 +45,24 @@ function handlePopupSubmit() {
   }
 
   // Hide the popup
-  document.getElementById('popup').style.display = 'none';
-
-  // Set a flag to indicate that the popup has been displayed
-  localStorage.setItem('popupDisplayed', true);
+  closePopup();
 }
+
+// Function to close the popup
+function closePopup() {
+  document.getElementById('popup').style.display = 'none';
+}
+
+// Function to open the popup
+function openPopup() {
+  document.getElementById('popup').style.display = 'block';
+}
+
+// Add event listener to the form submission
+document.querySelector('.popup-content form').addEventListener('submit', function (event) {
+  event.preventDefault();
+  handlePopupSubmit();
+});
 
 // Function to validate the custom amount input
 function isValidAmount(amount) {
@@ -54,7 +79,7 @@ function isValidAmount(amount) {
 // Show the popup after a timeout (adjust the delay as needed)
 setTimeout(function () {
   if (!localStorage.getItem('popupDisplayed')) {
-    document.getElementById('popup').style.display = 'block';
+    openPopup();
   }
 }, 500);
 
@@ -110,6 +135,6 @@ window.addEventListener('DOMContentLoaded', function () {
   var buyCoffeeLink = document.querySelector('.buy-coffee');
   buyCoffeeLink.addEventListener('click', function (event) {
       event.preventDefault();
-      document.getElementById('popup').style.display = 'block';
+      openPopup();
   });
 });

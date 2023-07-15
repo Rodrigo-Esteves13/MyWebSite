@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>R.ME</title>
+    <title>REMS</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{ asset('css/footer.blade.css') }}">
     <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -32,7 +32,7 @@
             </div>
         </div>
         <div class="black-section">
-            <p>&copy; 2023 R.ME. All rights reserved.</p>
+            <p>&copy; 2023 REMS. All rights reserved.</p>
         </div>
     </footer>
 
