@@ -1,25 +1,31 @@
 body {
-    background-color: #008B8B;
-    font-family: Arial, sans-serif;
-    color: #f1f1f1;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+  background-image: url('../img/tech1.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: Arial, sans-serif;
+  color: #f1f1f1;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  animation-name: slow-animation;
+  animation-duration: 10s; /* Adjust the duration as per your preference */
+  animation-timing-function: steps(1);
+  animation-iteration-count: infinite;
+}
+
+@keyframes slow-animation {
+  0% {
+    background-position: 0 0;
   }
-  
-  .containers {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; /* Updated to align to the top */
-    height: 100vh;
-    overflow: auto;
+  100% {
+    background-position: 100% 0;
   }
-  
-  .big-text {
-    font-size: 48px;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 20vh; /* Added margin-top to move it up */
-  }
-  
-  
+}
+
+.containers {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  overflow: auto;
+}

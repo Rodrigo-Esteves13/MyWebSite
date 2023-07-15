@@ -70,7 +70,7 @@ function formatAmountInput(input) {
   }
 }
 
-$(function() {
+document.addEventListener('DOMContentLoaded', function() {
   var input = "";
 
   $("#customAmount").keydown(function(e) {
