@@ -10,7 +10,7 @@ class ProfileController extends Controller
 {
     public function show($user)
     {
-        $user = User::where('identifier', $user)->first();
+        $user = User::find($user);
     
         // Check if the user exists
         if (!$user) {
@@ -23,9 +23,8 @@ class ProfileController extends Controller
         // Pass the profile data to the view
         return view('auth.show', compact('profileData'));
     }
-  
     
-    
+
     public function edit()
     {
         $user = Auth::user();

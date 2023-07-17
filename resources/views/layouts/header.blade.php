@@ -16,6 +16,7 @@
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    @include('layouts.popup')
     <link rel="stylesheet" href="{{ asset('css/popup.blade.css') }}">
 </head>
 <body>
@@ -65,9 +66,6 @@
         <a href="{{ url('/chat') }}">Chat with me</a>
     </nav>
 </div>
-
-
-    <!-- JavaScript code -->
     <script src="{{ asset('js/popup.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>

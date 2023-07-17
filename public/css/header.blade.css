@@ -13,24 +13,6 @@
     border-color: black 2px;
     /* animation: borderAnimation 5s infinite linear; */
 }
-/* @keyframes borderAnimation {
-    0% {
-        border: 2px solid red;
-    }
-    25% {
-        border: 2px solid blue;
-    }
-    50% {
-        border: 2px solid red;
-    }
-    75% {
-        border: 2px solid blue;
-    }
-    100% {
-        border: 2px solid red;
-    }
-} */
-
 .logo {
     font-size: 24px;
     font-weight: bold;
