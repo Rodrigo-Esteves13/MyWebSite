@@ -8,9 +8,10 @@ use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
-    public function show($user)
+    public function show($username)
     {
-        $user = User::find($user);
+        $user = User::where('username', $username)->firstOrFail();
+        $this->authorize('view', $user);
     
         // Check if the user exists
         if (!$user) {
@@ -23,7 +24,17 @@ class ProfileController extends Controller
         // Pass the profile data to the view
         return view('auth.show', compact('profileData'));
     }
-    
+    public function destroy(User $user)
+    {
+        $this->authorize('delete', $user);
+
+        // Perform any additional necessary actions (e.g., delete related records, log out the user)
+
+        $user->delete();
+
+        return redirect()->route('welcome')->with('success', 'Your account has been deleted.');
+    }
+
 
     public function edit()
     {

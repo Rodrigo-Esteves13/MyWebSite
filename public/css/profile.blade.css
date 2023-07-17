@@ -1,0 +1,83 @@
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px); /* Subtract the header height */
+    background: linear-gradient(to bottom right, #000000, #ffffff);
+  }
+  
+  .profile-table {
+    width: 400px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-table table {
+    width: 100%;
+  }
+  
+  .profile-table th,
+  .profile-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .profile-table th {
+    text-align: left;
+  }
+  
+  .profile-content {
+    text-align: center;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+  }
+  
+  .profile-content h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+  
+  .profile-content p {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .profile-content a {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+  
+  .profile-content a:hover {
+    color: #cccccc;
+  }
+
+  .profile-card {
+    width: 300px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-card h2 {
+    margin-bottom: 10px;
+  }
+  
+  .profile-card p {
+    margin-bottom: 20px;
+  }
+
+  .header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    /* Your existing header styles */
+  }
+  
+  /* Additional styles specific to your profile page */
+  /* Add any additional styles for your profile page here */
+  
