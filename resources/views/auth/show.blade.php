@@ -26,7 +26,7 @@
       </tr>
     <tr>
         <td colspan="2">
-            <form action="{{ route('profile.destroy', $user) }}" method="POST">
+        <form action="{{ route('profile.destroy', $user->username) }}" method="POST">
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete your account?')">Delete Account</button>

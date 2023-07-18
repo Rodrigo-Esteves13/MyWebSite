@@ -21,14 +21,16 @@
 </head>
 <body>
 <div class="header">
-    <a href="{{ route('welcome') }}" class="logo">
+    <div class="left-section">
+        <a href="{{ route('welcome') }}" class="logo">
         <div class="logo-text" style="color: white; text-decoration: none;">REMS</div>
         <div class="separator"></div>
         <img src="/svg/FireLogo.svg" alt="Logo">
-    </a>
-    <div class="buy-coffee">
-        <span id="buyCoffeeBtn">Buy me a coffee</span>
-        <i class="fas fa-coffee"></i>
+        </a>
+        <div class="buy-coffee">
+            <span id="buyCoffeeBtn">Buy me a coffee</span>
+            <i class="fas fa-coffee"></i>
+        </div>
     </div>
     <nav class="header__nav">
         @guest
@@ -41,13 +43,13 @@
             <!-- User is logged in -->
             <div class="dropdown">
                 <a id="navbarDropdown" class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {{ Auth::user()->name }}
+                    {{ Auth::user()->username }}
                 </a>
                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="{{ route('profile.edit') }}">
                         Edit Profile
                     </a>
-                    <a class="dropdown-item" href="{{ route('profile.show', Auth::user()) }}">
+                    <a class="dropdown-item" href="{{ route('profile.show', ['username' => Auth::user()->username]) }}">
                         Show Profile
                     </a>
                     <a class="dropdown-item" href="{{ route('logout') }}"
