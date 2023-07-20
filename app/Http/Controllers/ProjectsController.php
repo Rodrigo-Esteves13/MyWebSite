@@ -12,8 +12,9 @@ class ProjectsController extends Controller
     {
         $projects = DB::table('projects')->get();
     
-        return view('projects.index', compact('projects'));
+        return view('projects', compact('projects'));
     }
+    
     
 
     public function create()
