@@ -18,5 +18,8 @@
         "tailwindcss": "^3.3.3",
         "vite": "^4.3.9",
         "vue": "^3.2.37"
+    },
+    "dependencies": {
+        "trix": "^2.0.5"
     }
 }

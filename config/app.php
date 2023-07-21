@@ -185,7 +185,7 @@ return [
         /*
          * Package Service Providers...
          */
-
+        Te7aHoudini\LaravelTrix\LaravelTrixServiceProvider::class,
         /*
          * Application Service Providers...
          */
