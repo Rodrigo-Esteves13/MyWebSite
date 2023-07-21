@@ -19,23 +19,19 @@
       <tr>
         <th>Username</th>
         <td>{{ $user->username }}</td>
-    </tr>
+      </tr>
       <tr>
         <th>E-mail</th>
         <td>{{ $user->email }}</td>
       </tr>
-    <tr>
-        <td colspan="2">
-        <form action="{{ route('profile.destroy', $user->username) }}" method="POST">
-                @csrf
-                @method('DELETE')
-                <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete your account?')">Delete Account</button>
-            </form>
-        </td>
-    </tr>
-    </table>
+    </table><br>
+
+    <div class="text-center"> <!-- This div centers its content -->
+      @if(Auth::user() && Auth::user()->id === $user->id)
+        <a href="{{ route('profile.edit', ['username' => $user->username]) }}" class="btn btn-primary">Edit Profile</a>
+      @endif
+    </div>
+
   </div>
 </div>
-
-
 @include('layouts.footer')

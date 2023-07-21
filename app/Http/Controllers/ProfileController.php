@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use App\Providers\AuthServiceProvider;
+use Illuminate\Support\Facades\Route;
+
 
 class ProfileController extends Controller
 {
@@ -28,8 +32,6 @@ class ProfileController extends Controller
         }
     }
     
-    
-    
     public function destroy($username)
     {
         $user = User::where('username', $username)->first();
@@ -44,10 +46,47 @@ class ProfileController extends Controller
             return redirect()->route('welcome')->with('error', 'User not found.');
         }
     }
+
+    public function update(Request $request)
+    {
+        $user = Auth::user();
         
+        // Validate the request data, including unique email and username
+        $request->validate([
+            'name' => 'required',
+            'username' => 'required|unique:users,username,' . $user->id,
+            'email' => 'required|email|unique:users,email,' . $user->id,
+        ]);
+    
+        // Find the user record using the primary key (id)
+        $userToUpdate = User::find($user->id);
+    
+        // Update the user's attributes
+        $userToUpdate->name = $request->input('name');
+        $userToUpdate->username = $request->input('username');
+        $userToUpdate->email = $request->input('email');
+    
+        // Save the changes
+        $userToUpdate->save();
+    
+        // Update the Auth user instance with the new username and email
+        $user->name = $userToUpdate->name;
+        $user->username = $userToUpdate->username;
+        $user->email = $userToUpdate->email;
+    
+        return redirect()->route('profile.show', ['username' => $user->username])->with('success', 'Profile updated successfully.');
+    }
+    
+    
+    
     public function edit()
     {
         $user = Auth::user();
-        return view('profile.edit', compact('user'));
+    
+        // Check if the authenticated user is an admin or if the profile is editable
+        $isEditable = $user->is_admin || $user->is_editable;
+    
+        return view('auth.edit', compact('user', 'isEditable'));
     }
+        
 }
