@@ -263,3 +263,17 @@ button:hover {
 .btn-danger::before {
     content: "\f1f8"; /* Trash icon code from Font Awesome */
 }
+.delete-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.delete-button i {
+    color: red;
+    font-size: 1.5rem;
+}
+
+.delete-button:hover i {
+    color: darkred;
+}

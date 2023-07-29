@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
+use App\Models\Project;
+
 
 class ProjectsController extends Controller
 {
@@ -121,11 +123,25 @@ class ProjectsController extends Controller
 
     // ProjectsController.php
 
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        DB::table('projects')->where('id', $id)->delete();
+        $request->validate([
+            'title' => 'required',
+            // Remove the validation for description
+            // 'description' => 'required',
+        ]);
+        $project = DB::table('projects')->find($id);
     
-        return redirect()->route('projects.projects')->with('success', 'Project deleted successfully.');
+        if (!$project) {
+            abort(404);
+        }
+        // Check if the authenticated user is authorized to delete the project
+        $this->authorize('delete', $project);
+
+        // Perform the delete operation
+        $project->delete();
+
+        return redirect()->route('projects')->with('success', 'Project deleted successfully.');
     }
     
 }

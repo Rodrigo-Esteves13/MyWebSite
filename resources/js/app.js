@@ -5,6 +5,8 @@
  */
 
 import './bootstrap';
+import 'trix';
+import './trix_custom';
 import { createApp } from 'vue';
 
 /**
@@ -15,8 +17,11 @@ import { createApp } from 'vue';
 
 const app = createApp({});
 
-import ExampleComponent from './components/ExampleComponent.vue';
-app.component('example-component', ExampleComponent);
+import Vue from 'vue';
+import { QuillEditor } from 'vue-quill-editor';
+
+Vue.component('quill-editor', QuillEditor);
+
 
 /**
  * The following block of code may be used to automatically register your
