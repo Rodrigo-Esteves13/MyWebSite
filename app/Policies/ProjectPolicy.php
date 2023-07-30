@@ -65,7 +65,8 @@ class ProjectPolicy
      */
     public function delete(User $user, Project $project)
     {
-        //
+        // Only admins are allowed to delete projects
+        return $user->isAdmin();
     }
 
     /**

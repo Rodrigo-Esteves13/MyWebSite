@@ -10,6 +10,10 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
+    public function isAdmin()
+    {
+        return $this->is_admin;
+    }
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
@@ -23,12 +27,6 @@ class User extends Authenticatable
         'email',
         'password',
     ];
-    public function isAdmin()
-        {
-            return $this->is_admin;
-        }
-    
-
     /**
      * The attributes that should be hidden for serialization.
      *

@@ -37,49 +37,36 @@ class ProjectsController extends Controller
 
     public function store(Request $request)
     {
-        // Validate the request data
         $request->validate([
             'title' => 'required',
-            'description' => 'required',
-            // Add other validation rules as needed
+            'thumbnail' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Set your desired image types and maximum size
         ]);
-    
-        // Create a new project with the validated data
-        DB::table('projects')->insert([
-            'title' => $request->input('title'),
-            'description' => $request->input('description'),
-            'thumbnail' => 'default-thumbnail.jpg', // Provide a default value or actual thumbnail path here
-            // Set other project attributes as needed
-        ]);
-    
-        // Redirect to the projects page or any other appropriate page
-        return redirect()->route('projects')->with('success', 'Project created successfully.');
-    }
-    
-    // ProjectsController.php
 
-    public function edit($id)
-    {
-        $project = DB::table('projects')->find($id);
-
-        if (!$project) {
-            abort(404);
+        // Handle the thumbnail upload
+        $thumbnailPath = null;
+        if ($request->hasFile('thumbnail')) {
+            $thumbnailPath = $request->file('thumbnail')->store('thumbnails');
         }
 
-        return view('projects.edit', compact('project'));
+        // Create a new project with the validated data
+        Project::create([
+            'title' => $request->input('title'),
+            'description' => $request->input('description'),
+            'thumbnail' => $thumbnailPath,
+        ]);
+
+        return redirect()->route('projects.index')->with('success', 'Project created successfully.');
     }
-
-
+    
+    
     public function update(Request $request, $id)
     {
         $request->validate([
             'title' => 'required',
-            // Remove the validation for description
-            // 'description' => 'required',
         ]);
     
         // Retrieve the project record
-        $project = DB::table('projects')->find($id);
+        $project = Project::find($id);
     
         if (!$project) {
             abort(404);
@@ -88,19 +75,13 @@ class ProjectsController extends Controller
         // Update the project title
         $project->title = $request->input('title');
     
-        // Save the updated title
-        $project->save();
-    
         // Handle the description separately, if it's changed
         if ($request->has('description')) {
-            $description = $request->input('description');
-    
-            // Save the description as is (it will be in HTML format)
-            $project->description = $description;
-    
-            // Save the updated description
-            $project->save();
+            $project->description = strip_tags($request->input('description')); // Remove HTML tags
         }
+    
+        // Save the updated title and description
+        $project->save();
     
         // Handle the thumbnail image update (if applicable)
         if ($request->hasFile('thumbnail')) {
@@ -120,28 +101,43 @@ class ProjectsController extends Controller
         return redirect()->route('projects.show', ['id' => $id])->with('success', 'Project updated successfully.');
     }
     
-
+    
+    
     // ProjectsController.php
 
-    public function destroy(Request $request, $id)
+    public function edit($id)
     {
-        $request->validate([
-            'title' => 'required',
-            // Remove the validation for description
-            // 'description' => 'required',
-        ]);
         $project = DB::table('projects')->find($id);
-    
+
         if (!$project) {
             abort(404);
         }
+
+        return view('projects.edit', compact('project'));
+    }
+
+    // ProjectsController.php
+
+    public function destroy($id)
+    {
+        // Retrieve the project record
+        $project = Project::find($id);
+
+        if (!$project) {
+            abort(404);
+        }
+
         // Check if the authenticated user is authorized to delete the project
         $this->authorize('delete', $project);
+
+        // Delete the project's thumbnail file from storage
+        Storage::delete($project->thumbnail);
 
         // Perform the delete operation
         $project->delete();
 
         return redirect()->route('projects')->with('success', 'Project deleted successfully.');
     }
+
     
 }

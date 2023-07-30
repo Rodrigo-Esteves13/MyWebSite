@@ -1,14 +1,12 @@
 <?php
-
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
 
 class Project extends Model
 {
-    protected $fillable = ['title', 'description', 'thumbnail'];
-    
-    // Add any additional properties or relationships here
+    use HasFactory;
 
+    protected $fillable = ['title', 'description', 'thumbnail'];
 }

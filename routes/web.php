@@ -20,12 +20,15 @@ Auth::routes();
 Route::get('/chat', [ChatController::class, 'chat']);
 
 //project routes
-Route::get('/projects', [ProjectsController::class, 'projects'])->name('projects');
-Route::get('/projects/{id}/edit', [ProjectsController::class, 'edit'])->name('projects.edit');
-Route::post('/projects', [ProjectsController::class, 'store'])->name('projects.store');
-Route::put('/projects/{id}', [ProjectsController::class, 'update'])->name('projects.update');
-Route::delete('/projects/{id}', 'ProjectController@destroy')->name('projects.destroy');
-Route::get('/projects/{id}', [ProjectsController::class, 'show'])->name('projects.show');
+Route::prefix('projects')->group(function () {
+    Route::get('/', [ProjectsController::class, 'projects'])->name('projects');
+    Route::get('/{id}/edit', [ProjectsController::class, 'edit'])->name('projects.edit');
+    Route::post('/', [ProjectsController::class, 'store'])->name('projects.store');
+    Route::put('/{id}', [ProjectsController::class, 'update'])->name('projects.update');
+    Route::delete('/{id}', [ProjectsController::class, 'destroy'])->name('projects.destroy');
+    Route::get('/{id}', [ProjectsController::class, 'show'])->name('projects.show');
+});
+
 
 
 
