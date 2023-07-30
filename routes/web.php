@@ -22,6 +22,7 @@ Route::get('/chat', [ChatController::class, 'chat']);
 //project routes
 Route::prefix('projects')->group(function () {
     Route::get('/', [ProjectsController::class, 'projects'])->name('projects');
+    Route::get('/projects', [ProjectsController::class, 'projects'])->name('projects.index');
     Route::get('/{id}/edit', [ProjectsController::class, 'edit'])->name('projects.edit');
     Route::post('/', [ProjectsController::class, 'store'])->name('projects.store');
     Route::put('/{id}', [ProjectsController::class, 'update'])->name('projects.update');

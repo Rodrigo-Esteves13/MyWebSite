@@ -39,26 +39,29 @@ class ProjectsController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'thumbnail' => 'image|mimes:jpeg,png,jpg,gif|max:2048', // Set your desired image types and maximum size
+            'thumbnail' => 'image|mimes:jpeg,png,jpg,gif|max:5100', // Set your desired image types and maximum size
         ]);
-
-        // Handle the thumbnail upload
-        $thumbnailPath = null;
+    
+        // Handle the thumbnail upload and store the image file
         if ($request->hasFile('thumbnail')) {
-            $thumbnailPath = $request->file('thumbnail')->store('thumbnails');
+            $thumbnailFile = $request->file('thumbnail');
+            $thumbnailPath = $thumbnailFile->store('thumbnails', 'public'); // Change the storage path
+        } else {
+            // If no thumbnail is provided, use a default image
+            $thumbnailPath = 'thumbnails/default.jpg';
         }
-
+    
         // Create a new project with the validated data
         Project::create([
             'title' => $request->input('title'),
             'description' => $request->input('description'),
             'thumbnail' => $thumbnailPath,
         ]);
-
+    
         return redirect()->route('projects.index')->with('success', 'Project created successfully.');
     }
-    
-    
+
+
     public function update(Request $request, $id)
     {
         $request->validate([

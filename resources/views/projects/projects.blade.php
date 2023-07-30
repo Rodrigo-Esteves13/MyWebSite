@@ -27,19 +27,15 @@
     </div>
     @endcan
 
-    <div class="project-list">
+<div class="project-list">
     @foreach ($projects as $project)
         <a href="{{ route('projects.show', ['id' => $project->id]) }}" class="project-item">
             <div class="thumbnail">
-                @if ($project->thumbnail)
-                    <img src="{{ asset($project->thumbnail) }}" alt="Thumbnail">
-                @else
-                    <!-- Display a default thumbnail or an empty placeholder image -->
-                    <img src="{{ asset('img/thumbnail-default.jpg') }}" alt="Thumbnail">
-                @endif
+                <img src="{{ asset('storage/' . $project->thumbnail) }}" alt="{{ $project->title }}">
             </div>
             <div class="project-details">
                 <h3 class="project-title">{{ $project->title }}</h3>
+                <p>{!! $project->description !!}</p>
                 @if (auth()->check() && auth()->user()->isAdmin())
                     <form action="{{ route('projects.edit', ['id' => $project->id]) }}" method="GET">
                         <button type="submit" class="edit-button">
@@ -53,26 +49,27 @@
 </div>
 
 
-    <div id="projectModal" class="modal">
-        <div class="modal-content">
-            <!-- Project creation form -->
-            <form id="createProjectForm" enctype="multipart/form-data">
-                <!-- Add your project creation form fields here -->
-                <label for="thumbnail">Thumbnail:</label>
-                <input type="file" name="thumbnail" id="thumbnail"><br>
-                <label for="title">Title:</label>
-                <input type="text" name="title" id="title" required><br>
-                <div class="form-group">
-                    <label for="description">Project Description</label>
-                    <!-- Use Trix input for description -->
-                    <input id="description" type="hidden" name="description" value="">
-                    <trix-editor input="description"></trix-editor>
-                </div>
-                <!-- Add more fields if needed -->
-                <button type="submit">Create Project</button>
-            </form>
-        </div>
+
+<div id="projectModal" class="modal">
+    <div class="modal-content">
+        <!-- Project creation form -->
+        <form id="createProjectForm" enctype="multipart/form-data">
+            <!-- Add your project creation form fields here -->
+            <label for="thumbnail">Thumbnail:</label>
+            <input type="file" name="thumbnail" id="thumbnail"><br>
+            <label for="title">Title:</label>
+            <input type="text" name="title" id="title" required><br>
+            <div class="form-group">
+                <label for="description">Project Description</label>
+                <!-- Use Trix input for description -->
+                <input id="description" type="hidden" name="description" value="">
+                <trix-editor input="description"></trix-editor>
+            </div>
+            <!-- Add more fields if needed -->
+            <button type="submit">Create Project</button>
+        </form>
     </div>
+</div>
 
 <script src="{{ asset('js/trix.js') }}"></script>
 <script src="{{ asset('js/trix_custom.js') }}"></script>
@@ -85,8 +82,8 @@
     const descriptionInput = document.getElementById("description");
 
     trixEditor.addEventListener("trix-change", function(event) {
-        // Update the hidden input with the Trix editor's HTML content
-        descriptionInput.value = event.target.innerHTML;
+        // Update the hidden input with the Trix editor's plain text content
+        descriptionInput.value = trixEditor.innerText;
     });
 
     // Allow only image attachments in Trix editor
@@ -124,10 +121,6 @@
     });
 </script>
 <script>
-    const projectStoreRoute = "{{ route('projects.store') }}";
-</script>
-
-<script>
     // Script to open the modal
     const openModalButton = document.getElementById('openModalButton');
     const projectModal = document.getElementById('projectModal');
@@ -144,27 +137,25 @@
     });
 </script>
 <script>
+    const projectStoreRoute = "{{ route('projects.store') }}";
     const createProjectForm = document.getElementById("createProjectForm");
     createProjectForm.addEventListener("submit", function(event) {
         event.preventDefault();
         const formData = new FormData(createProjectForm);
 
-        // Send the form data via AJAX
         axios.post(projectStoreRoute, formData)
-            .then(function(response) {
-                // Handle the successful response, e.g., show a success message
-                alert(response.data.message);
-                // Close the modal after successful project creation
-                projectModal.style.display = 'none';
-                // Optionally, you can reload the page or update the projects list after project creation
-                location.reload();
-            })
-            .catch(function(error) {
-                // Handle the error response, e.g., show an error message
-                alert('Error creating project. Please try again.');
-            });
-    });
-</script>
+        .then(function(response) {
+            // Handle the successful response, e.g., show a success message
 
+            // Optionally, you can reload the page or update the projects list after project creation
+            location.reload();
+        })
+        .catch(function(error) {
+            // Handle the error response, e.g., show an error message
+            alert('Error creating project. Please try again.');
+        });
+    });
+
+</script>
 </body>
 </html>
