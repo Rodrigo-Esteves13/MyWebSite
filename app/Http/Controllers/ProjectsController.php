@@ -66,41 +66,37 @@ class ProjectsController extends Controller
     {
         $request->validate([
             'title' => 'required',
+            'new_thumbnail' => 'image|mimes:jpeg,png,jpg,gif|max:5100', // Set your desired image types and maximum size
         ]);
-    
+
         // Retrieve the project record
         $project = Project::find($id);
-    
+
         if (!$project) {
             abort(404);
         }
-    
-        // Update the project title
-        $project->title = $request->input('title');
-    
-        // Handle the description separately, if it's changed
+        
         if ($request->has('description')) {
             $project->description = strip_tags($request->input('description')); // Remove HTML tags
         }
-    
-        // Save the updated title and description
+        // Update the project title and description
+        $project->title = $request->input('title');
+        $project->description = $request->input('description');
         $project->save();
-    
-        // Handle the thumbnail image update (if applicable)
-        if ($request->hasFile('thumbnail')) {
+
+        // Handle the new thumbnail image update (if applicable)
+        if ($request->hasFile('new_thumbnail')) {
             // Delete the old thumbnail if it exists
             Storage::delete($project->thumbnail);
-    
+
             // Store the new thumbnail
-            $thumbnailPath = $request->file('thumbnail')->store('thumbnails');
-    
+            $thumbnailPath = $request->file('new_thumbnail')->store('public/thumbnails');
+
             // Save the thumbnail path to the project record
-            $project->thumbnail = $thumbnailPath;
-    
-            // Save the updated thumbnail path
+            $project->thumbnail = str_replace('public/', '', $thumbnailPath);
             $project->save();
         }
-    
+
         return redirect()->route('projects.show', ['id' => $id])->with('success', 'Project updated successfully.');
     }
     

@@ -34,8 +34,7 @@
                 <img src="{{ asset('storage/' . $project->thumbnail) }}" alt="{{ $project->title }}">
             </div>
             <div class="project-details">
-                <h3 class="project-title">{{ $project->title }}</h3>
-                <p>{!! $project->description !!}</p>
+                <h3 class="project-title">{{ $project->title }}</h3><br>
                 @if (auth()->check() && auth()->user()->isAdmin())
                     <form action="{{ route('projects.edit', ['id' => $project->id]) }}" method="GET">
                         <button type="submit" class="edit-button">
