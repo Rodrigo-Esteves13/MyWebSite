@@ -18,6 +18,7 @@ Auth::routes();
 
 //chat routes
 Route::get('/chat', [ChatController::class, 'chat']);
+Route::post('/chatmessage', [ChatController::class, 'sendMessage']);
 
 //project routes
 Route::prefix('projects')->group(function () {
