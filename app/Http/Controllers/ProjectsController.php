@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 use App\Models\Project;
 
-
 class ProjectsController extends Controller
 {
     public function projects()
@@ -40,6 +39,7 @@ class ProjectsController extends Controller
         $request->validate([
             'title' => 'required',
             'thumbnail' => 'image|mimes:jpeg,png,jpg,gif|max:5100', // Set your desired image types and maximum size
+            'description' => 'required|string', // Trix editor content
         ]);
     
         // Handle the thumbnail upload and store the image file
@@ -51,12 +51,17 @@ class ProjectsController extends Controller
             $thumbnailPath = 'thumbnails/default.jpg';
         }
     
-        // Create a new project with the validated data
-        Project::create([
+        // Create a new project instance with the validated data
+        $project = new Project([
             'title' => $request->input('title'),
-            'description' => $request->input('description'),
             'thumbnail' => $thumbnailPath,
         ]);
+    
+        // Use the `setAttribute` method from the `HasTrixRichText` trait to handle rich text content
+        $project->setAttribute('description', $request->input('description'));
+    
+        // Save the new project to the database
+        $project->save();
     
         return redirect()->route('projects.index')->with('success', 'Project created successfully.');
     }
@@ -99,10 +104,6 @@ class ProjectsController extends Controller
 
         return redirect()->route('projects.show', ['id' => $id])->with('success', 'Project updated successfully.');
     }
-    
-    
-    
-    // ProjectsController.php
 
     public function edit($id)
     {
@@ -114,8 +115,6 @@ class ProjectsController extends Controller
 
         return view('projects.edit', compact('project'));
     }
-
-    // ProjectsController.php
 
     public function destroy($id)
     {
@@ -138,5 +137,15 @@ class ProjectsController extends Controller
         return redirect()->route('projects')->with('success', 'Project deleted successfully.');
     }
 
+    public function uploadImage(Request $request)
+    {
+        if ($request->hasFile('file') && $request->file('file')->isValid()) {
+            $image = $request->file('file');
+            $imguploadPath = $image->store('img_description', 'public');
     
+            return response()->json(['success' => true, 'file' => ['url' => asset('storage/'.$imguploadPath)]]);
+        }
+    
+        return response()->json(['success' => false, 'message' => 'Failed to upload image.']);
+    }
 }

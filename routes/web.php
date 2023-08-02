@@ -29,10 +29,8 @@ Route::prefix('projects')->group(function () {
     Route::put('/{id}', [ProjectsController::class, 'update'])->name('projects.update');
     Route::delete('/{id}', [ProjectsController::class, 'destroy'])->name('projects.destroy');
     Route::get('/{id}', [ProjectsController::class, 'show'])->name('projects.show');
+    Route::post('/upload/image', [ProjectsController::class, 'uploadImage'])->name('upload.image');
 });
-
-
-
 
 //profile routes
 Route::get('profile/{username}', [ProfileController::class, 'show'])->name('profile.show');

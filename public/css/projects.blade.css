@@ -149,7 +149,6 @@ button:hover {
 
 .project-item .thumbnail {
     height: 150px;
-    overflow: hidden;
 }
 
 .project-item .thumbnail img {
