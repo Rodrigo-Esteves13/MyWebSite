@@ -38,7 +38,7 @@ class ProjectsController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'thumbnail' => 'image|mimes:jpeg,png,jpg,gif|max:5100', // Set your desired image types and maximum size
+            'thumbnail' => 'image|mimes:jpeg,png,jpg,gif|max:100000', // Set your desired image types and maximum size
             'description' => 'required|string', // Trix editor content
         ]);
     
@@ -55,6 +55,7 @@ class ProjectsController extends Controller
         $project = new Project([
             'title' => $request->input('title'),
             'thumbnail' => $thumbnailPath,
+            'image_filename' => $request->input('image_filename') // Store the image filename
         ]);
     
         // Use the `setAttribute` method from the `HasTrixRichText` trait to handle rich text content
@@ -148,4 +149,5 @@ class ProjectsController extends Controller
     
         return response()->json(['success' => false, 'message' => 'Failed to upload image.']);
     }
+    
 }

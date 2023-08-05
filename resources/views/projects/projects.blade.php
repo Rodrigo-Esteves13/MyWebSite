@@ -53,10 +53,10 @@
         <form id="createProjectForm" action="{{ route('projects.store') }}" method="post" enctype="multipart/form-data">
             @csrf
             <!-- Add your project creation form fields here -->
-            <label for="thumbnail">Thumbnail:</label>
-            <input type="file" name="thumbnail" id="thumbnail"><br>
             <label for="title">Title:</label>
             <input type="text" name="title" id="title" required><br>
+            <label for="thumbnail">Thumbnail:</label>
+            <input type="file" name="thumbnail" id="thumbnail"><br>
             <div class="form-group">
                 <label for="description">Project Description</label>
                 <!-- Use Trix input for description -->
@@ -64,13 +64,50 @@
                 <trix-editor input="description"></trix-editor>
             </div>
             <!-- Add more fields if needed -->
-            <button type="submit">Create Project</button>
+            <button type="submit">Create Project</button><br>
+            <button type="button" id="closeModalButton">Close</button>
         </form>
     </div>
 </div>
 <script src="{{ asset('js/trix_custom.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.4/axios.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/trix/1.3.1/trix.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@rails/actiontext"></script>
+<script src="https://cdn.jsdelivr.net/npm/@rails/ujs@7.0.6/lib/assets/compiled/rails-ujs.min.js"></script>
+<script>
+openModalButton.addEventListener('click', () => {
+    projectModal.style.display = 'block';
+});
+
+closeModalButton.addEventListener('click', () => {
+    projectModal.style.display = 'none';
+});
+
+Trix.config.attachments.preview.caption = { name: false, size: false }
+Trix.config.attachments.preview.file = { name: true, size: true }
+Trix.config.attachments.preview.image = { name: false, size: true }
+Trix.config.attachments.preview.audio = { name: false, size: true }
+Trix.config.attachments.preview.video = { name: false, size: true }
+
+document.addEventListener('trix-attachment-add', function(event) {
+    var attachment = event.attachment;
+    var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+    var uploadURL = 'projects/upload/image'; // Change this URL as needed
+    
+    var formData = new FormData();
+    formData.append('file', attachment.file);
+    formData.append('_token', csrfToken);
+
+    axios.post(uploadURL, formData)
+        .then(function(response) {
+            attachment.setAttributes({
+                url: response.data.file.url,
+                image_filename: response.data.file.filename // Store the image filename in a custom attribute
+            });
+        })
+        .catch(function(error) {
+            console.error('Error uploading image', error);
+        });
+});
+</script>
 </body>
 </html>

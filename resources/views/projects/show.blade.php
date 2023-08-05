@@ -10,9 +10,15 @@
 <body>
     <div class="project-details-container">
         <div class="project-details">
-            <h1 class="project-title">{{ $project->title }}</h1>
-            <p class="project-description">{{ $project->description }}</p>
-            <!-- Add other project details here -->
+            @if(isset($project))
+                <h1 class="project-title">{{ $project->title }}</h1>
+                <div class="project-description">
+                    {!! str_replace('src="storage/img_description/', 'src="' . asset('storage/img_description/') . '/', $project->description) !!}
+                </div>
+                <!-- Add other project details here -->
+            @else
+                <p>No project found.</p>
+            @endif
         </div>
     </div>
 
