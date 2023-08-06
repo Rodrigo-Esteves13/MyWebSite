@@ -48,14 +48,13 @@ class ProjectsController extends Controller
             $thumbnailPath = $thumbnailFile->store('thumbnails', 'public'); // Change the storage path
         } else {
             // If no thumbnail is provided, use a default image
-            $thumbnailPath = 'thumbnails/default.jpg';
+            $thumbnailPath = 'img/thumbnail-default.jpg';
         }
     
         // Create a new project instance with the validated data
         $project = new Project([
             'title' => $request->input('title'),
             'thumbnail' => $thumbnailPath,
-            'image_filename' => $request->input('image_filename') // Store the image filename
         ]);
     
         // Use the `setAttribute` method from the `HasTrixRichText` trait to handle rich text content

@@ -13,6 +13,10 @@
     <h1>User Profile</h1>
     <table>
       <tr>
+        <th>Profile Picture</th>
+        <td><img src="{{ asset('storage/' . $user->profile_picture) }}" alt="Profile Picture"></td>
+      </tr>
+      <tr>
         <th>Name</th>
         <td>{{ $user->name }}</td>
       </tr>

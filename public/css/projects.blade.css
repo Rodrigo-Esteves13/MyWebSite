@@ -262,3 +262,34 @@ button:hover {
 .btn-danger::before {
     content: "\f1f8"; /* Trash icon code from Font Awesome */
 }
+.custom-file-upload {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: fit-content;
+}
+
+.custom-file-upload:hover {
+    background-color: #0056b3;
+}
+
+/* Style the Font Awesome icon within the label */
+.custom-file-upload i {
+    margin-right: 10px;
+}
+
+/* Show the file input on label hover */
+.custom-file-upload:hover + input[type="file"] {
+    display: block;
+    opacity: 0; /* Hide the original input */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}

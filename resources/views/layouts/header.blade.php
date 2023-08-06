@@ -24,57 +24,31 @@
     <div class="left-section">
         <a href="{{ route('welcome') }}" class="logo">
         <div class="logo-text" style="color: white; text-decoration: none;">REMS</div>
-        <div class="separator"></div>
-        <img src="/svg/FireLogo.svg" alt="Logo">
         </a>
-        <div class="buy-coffee">
+    </div>
+    <div class="buy-coffee">
             <span id="buyCoffeeBtn">Buy me a coffee</span>
             <i class="fas fa-coffee"></i>
         </div>
-    </div>
     <nav class="header__nav">
-        @guest
-            <!-- User is not logged in -->
-            <a href="{{ route('login') }}">Login</a>
-            <span class="separator"></span>
-            <a href="{{ route('register') }}">Register</a>
-            <span class="separator"></span>
-        @else
-            <!-- User is logged in -->
-            <div class="dropdown">
-                <a id="navbarDropdown" class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {{ Auth::user()->username }}
-                </a>
-                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{ route('profile.show', ['username' => Auth::user()->username]) }}">
-                        Show Profile
-                    </a>
-                    <a class="dropdown-item" href="{{ route('logout') }}"
-                       onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                        Logout
-                    </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
-                </div>
-            </div>
-            <span class="separator"></span>
-        @endguest
-        <a href="{{ url('/projects') }}">My Projects</a>
-        <span class="separator"></span>
-        <a href="{{ url('/chat') }}">Chat with me</a>
+
     </nav>
 </div>
-    <script src="{{ asset('js/popup.js') }}"></script>
-    <script src="{{ asset('js/paypal.js') }}"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('.dropdown-toggle').on('click', function() {
-                $(this).siblings('.dropdown-menu').toggleClass('show');
-            });
-        });
-    </script>
+<script src="{{ asset('js/popup.js') }}"></script>
+<script src="{{ asset('js/paypal.js') }}"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script>
+    const sidebar = document.querySelector('.sidebar');
+    const header = document.querySelector('.header');
+
+    sidebar.addEventListener('mouseenter', () => {
+        header.style.width = 'calc(100% - 150px)'; // Adjust the width to match the expanded sidebar width
+    });
+
+    sidebar.addEventListener('mouseleave', () => {
+        header.style.width = '100%';
+    });
+</script>
 </body>
 </html>

@@ -9,6 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>REMS</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/projects.blade.css') }}">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/trix/1.3.1/trix.min.css">
 </head>
@@ -49,27 +50,24 @@
 
 <div id="projectModal" class="modal">
     <div class="modal-content">
-        <!-- Project creation form -->
         <form id="createProjectForm" action="{{ route('projects.store') }}" method="post" enctype="multipart/form-data">
             @csrf
-            <!-- Add your project creation form fields here -->
             <label for="title">Title:</label>
             <input type="text" name="title" id="title" required><br>
-            <label for="thumbnail">Thumbnail:</label>
-            <input type="file" name="thumbnail" id="thumbnail"><br>
+            <label for="thumbnail" class="custom-file-upload">
+            Thumbnail:  <i class="fa-regular fa-folder-open fa-bounce"></i>
+            </label>
+            <input type="file" name="thumbnail" id="thumbnail" style="display: none;"><br>
             <div class="form-group">
                 <label for="description">Project Description</label>
-                <!-- Use Trix input for description -->
                 <input type="hidden" name="description" id="description">
                 <trix-editor input="description"></trix-editor>
             </div>
-            <!-- Add more fields if needed -->
-            <button type="submit">Create Project</button><br>
-            <button type="button" id="closeModalButton">Close</button>
+            <button type="submit">Create Project  <i class="fa-solid fa-upload"></i></button>
+            <button type="button" id="closeModalButton">Close  <i class="fa-solid fa-xmark"></i></button>
         </form>
     </div>
 </div>
-<script src="{{ asset('js/trix_custom.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.4/axios.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/trix/1.3.1/trix.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@rails/ujs@7.0.6/lib/assets/compiled/rails-ujs.min.js"></script>
