@@ -13,12 +13,22 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 20px;
+    padding-top: 60px;
     transition: width 0.3s; /* Add transition effect for width change */
 }
 
 .sidebar:hover {
-    width: 150px; /* Expanded width on hover */
+    width: 158px; /* Expanded width on hover */
+}
+
+.profile-info {
+    padding: 10px 0;
+    font-size: 16px;
+    text-align: center;
+    width: 100%; /* Ensure full width */
+    transition: background-color 0.3s;
+    color: white;
+    text-decoration: none;
 }
 
 .profile-picture {
@@ -32,35 +42,56 @@ body {
 }
 
 .sidebar ul {
-    margin-top: 20px;
+    margin: 0;
+    padding: 0;
     list-style-type: none;
 }
 
-.sidebar li {
-    padding: 10px 0;
-    font-size: 16px;
+.sidebar-item {
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
     text-align: center;
-    width: 100%; /* Ensure full width */
+    width: 100%;
     transition: background-color 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
 }
 
-.sidebar li a {
+/* Hide text in the normal state */
+.sidebar:not(:hover) .sidebar-item .sidebar-text {
+    display: none;
+}
+
+.sidebar-item i {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    display: block;
+    transition: color 0.3s;
+    color: #ffd700; /* Color for icons in normal state */
+}
+
+/* Show text and icon on hover */
+.sidebar-item:hover .sidebar-text {
+    display: block;
+}
+
+/* Change icon color on hover */
+.sidebar-item:hover i {
+    color: #ffd700;
+}
+
+.sidebar-item a {
     text-decoration: none;
     color: white;
-    width: 100%; /* Ensure full width for link */
-    display: block;
-    padding: 10px 0;
+    width: 100%;
 }
 
-.sidebar li:hover {
-    background-color: #555;
+.sidebar-item:hover {
+    background-color: #444;
 }
-
-.content {
-    margin-left: 260px;
-    padding: 20px;
-}
-
 h1 {
     color: #333;
 }
@@ -68,8 +99,44 @@ h1 {
 p {
     color: #666;
 }
-.dropdown {
+
+.sidebar .dropdown {
     position: relative;
+}
+
+.sidebar .dropdown-toggle {
+    cursor: pointer;
+}
+
+.sidebar .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #555;
+    width: 100%;
+    padding: 0;
+    margin-left: -10px;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar .dropdown-menu li {
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+}
+
+.sidebar .dropdown-menu li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px 0;
+    transition: background-color 0.3s;
+}
+
+.sidebar .dropdown-menu li a:hover {
+    background-color: #444;
 }
 
 .dropdown-toggle {

@@ -6,16 +6,19 @@
 ?>
 
 @include('layouts.header')
+@include('layouts.sidebar')
 <link rel="stylesheet" href="{{ asset('css/profile.blade.css') }}">
 
 <div class="profile-container">
   <div class="profile-table">
     <h1>User Profile</h1>
     <table>
+      @if(Auth::check()) <!-- Check if the user is logged in -->
       <tr>
         <th>Profile Picture</th>
-        <td><img src="{{ asset('storage/' . $user->profile_picture) }}" alt="Profile Picture"></td>
+        <td><img src="{{ asset('storage/profilePic/' . $user->profile_picture) }}" alt="Profile Picture"></td>
       </tr>
+      @endif
       <tr>
         <th>Name</th>
         <td>{{ $user->name }}</td>
@@ -30,12 +33,12 @@
       </tr>
     </table><br>
 
-    <div class="text-center"> <!-- This div centers its content -->
+    <div class="text-center">
       @if(Auth::user() && Auth::user()->id === $user->id)
         <a href="{{ route('profile.edit', ['username' => $user->username]) }}" class="btn btn-primary">Edit Profile</a>
       @endif
     </div>
-
   </div>
 </div>
+
 @include('layouts.footer')

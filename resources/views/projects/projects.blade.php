@@ -1,5 +1,5 @@
-<!-- resources/views/projects.blade.php -->
 @include('layouts.header')
+@include('layouts.sidebar')
 @include('layouts.footer')
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">

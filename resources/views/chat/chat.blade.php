@@ -1,4 +1,5 @@
 @include('layouts.header')
+@include('layouts.sidebar')
 @include('layouts.footer')
 <!-- resources/views/chat.blade.php -->
 

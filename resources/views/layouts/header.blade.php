@@ -1,4 +1,3 @@
-<!-- Additional Laravel-specific code -->
 <?php
     use Illuminate\Support\Facades\Route;
     use Illuminate\Support\Facades\Auth;
@@ -38,17 +37,5 @@
 <script src="{{ asset('js/paypal.js') }}"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script>
-    const sidebar = document.querySelector('.sidebar');
-    const header = document.querySelector('.header');
-
-    sidebar.addEventListener('mouseenter', () => {
-        header.style.width = 'calc(100% - 150px)'; // Adjust the width to match the expanded sidebar width
-    });
-
-    sidebar.addEventListener('mouseleave', () => {
-        header.style.width = '100%';
-    });
-</script>
 </body>
 </html>

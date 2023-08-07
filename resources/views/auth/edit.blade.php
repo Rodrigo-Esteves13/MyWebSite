@@ -1,4 +1,5 @@
 @include('layouts.header')
+@include('layouts.sidebar')
 <link rel="stylesheet" href="{{ asset('css/profile.blade.css') }}">
 
 <div class="profile-container">

@@ -1,4 +1,5 @@
 @include('layouts.header')
+@include('layouts.sidebar')
 <link rel="stylesheet" href="{{ asset('css/projects.blade.css') }}">
 
 <div class="editProject-Container">
