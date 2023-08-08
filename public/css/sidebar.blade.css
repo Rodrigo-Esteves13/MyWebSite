@@ -1,10 +1,12 @@
+/* Global styles */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
 }
 
+/* Sidebar styles */
 .sidebar {
-    width: 60px; /* Set initial width for the collapsed portion */
+    width: 60px;
     position: fixed;
     top: 0;
     left: 0;
@@ -14,18 +16,19 @@ body {
     flex-direction: column;
     align-items: center;
     padding-top: 60px;
-    transition: width 0.3s; /* Add transition effect for width change */
+    transition: width 0.3s;
 }
 
 .sidebar:hover {
-    width: 158px; /* Expanded width on hover */
+    width: 170px;
 }
 
+/* Profile info styles */
 .profile-info {
     padding: 10px 0;
     font-size: 16px;
     text-align: center;
-    width: 100%; /* Ensure full width */
+    width: 100%;
     transition: background-color 0.3s;
     color: white;
     text-decoration: none;
@@ -47,6 +50,7 @@ body {
     list-style-type: none;
 }
 
+/* Sidebar item styles */
 .sidebar-item {
     padding: 0;
     margin: 0;
@@ -57,12 +61,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 25px;
-}
-
-/* Hide text in the normal state */
-.sidebar:not(:hover) .sidebar-item .sidebar-text {
-    display: none;
+    padding: 25px 30px;
 }
 
 .sidebar-item i {
@@ -70,17 +69,6 @@ body {
     margin-bottom: 5px;
     display: block;
     transition: color 0.3s;
-    color: #ffd700; /* Color for icons in normal state */
-}
-
-/* Show text and icon on hover */
-.sidebar-item:hover .sidebar-text {
-    display: block;
-}
-
-/* Change icon color on hover */
-.sidebar-item:hover i {
-    color: #ffd700;
 }
 
 .sidebar-item a {
@@ -89,17 +77,60 @@ body {
     width: 100%;
 }
 
+.sidebar:not(:hover) .sidebar-item .sidebar-text {
+    display: none;
+}
+
 .sidebar-item:hover {
     background-color: #444;
 }
-h1 {
-    color: #333;
+
+.sidebar-item:hover .sidebar-text {
+    display: block;
 }
 
-p {
-    color: #666;
+/* Auth link styles */
+.auth-links {
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
 }
 
+.auth-links a {
+    text-decoration: none;
+    color: white;
+    width: 100%;
+}
+
+.auth-links i {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    display: block;
+    transition: color 0.3s;
+}
+
+.auth-links:hover {
+    background-color: #444;
+}
+
+.auth-links:hover .sidebar-text {
+    display: block;
+}
+
+.sidebar:not(:hover) .auth-links .sidebar-text {
+    display: none;
+}
+
+
+
+
+/* Dropdown menu styles */
 .sidebar .dropdown {
     position: relative;
 }
@@ -111,12 +142,11 @@ p {
 .sidebar .dropdown-menu {
     display: none;
     position: absolute;
-    top: 100%;
+    top: -70px;
     left: 0;
     background-color: #555;
     width: 100%;
     padding: 0;
-    margin-left: -10px;
     border-radius: 0 0 4px 4px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }

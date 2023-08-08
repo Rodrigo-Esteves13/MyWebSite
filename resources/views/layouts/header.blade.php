@@ -1,9 +1,3 @@
-<?php
-    use Illuminate\Support\Facades\Route;
-    use Illuminate\Support\Facades\Auth;
-    $isLoginPage = Route::currentRouteName() === 'login';
-    $isRegisterPage = Route::currentRouteName() === 'register';
-?>
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -29,12 +23,26 @@
             <span id="buyCoffeeBtn">Buy me a coffee</span>
             <i class="fas fa-coffee"></i>
         </div>
-    <nav class="header__nav">
+<!-- Working code -->
 
+<nav class="header__nav">
+<div class="toggle-mode">
+    <input type="checkbox" id="modeSwitch" class="toggle-checkbox">
+    <label for="modeSwitch" class="toggle-label">
+        <div class="icons">
+        <i class="fas fa-sun sun-icon"></i>
+            <div class="toggle-button"></div>
+        <i class="fas fa-moon moon-icon"></i>
+        </div>
+    </label>
     </nav>
 </div>
+
+
+
 <script src="{{ asset('js/popup.js') }}"></script>
 <script src="{{ asset('js/paypal.js') }}"></script>
+<script src="{{ asset('js/theme.js') }}"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
