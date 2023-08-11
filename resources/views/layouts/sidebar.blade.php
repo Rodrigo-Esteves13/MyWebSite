@@ -94,6 +94,7 @@ $isRegisterPage = Route::currentRouteName() === 'register';
             </ul>
         </div>
     </div>
+    <script src="{{ asset('js/theme.js') }}"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const profileDropdown = document.getElementById('profile-dropdown');

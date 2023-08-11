@@ -23,8 +23,6 @@
             <span id="buyCoffeeBtn">Buy me a coffee</span>
             <i class="fas fa-coffee"></i>
         </div>
-<!-- Working code -->
-
 <nav class="header__nav">
 <div class="toggle-mode">
     <input type="checkbox" id="modeSwitch" class="toggle-checkbox">
@@ -37,8 +35,6 @@
     </label>
     </nav>
 </div>
-
-
 
 <script src="{{ asset('js/popup.js') }}"></script>
 <script src="{{ asset('js/paypal.js') }}"></script>

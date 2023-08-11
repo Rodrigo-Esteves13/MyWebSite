@@ -6,7 +6,6 @@
 
 import './bootstrap';
 import 'trix';
-import './trix_custom';
 import { createApp } from 'vue';
 
 /**

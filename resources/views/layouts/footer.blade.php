@@ -35,7 +35,8 @@
             <p>&copy; 2023 REMS. All rights reserved.</p>
         </div>
     </footer>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <script src="{{ asset('js/theme.js') }}"></script>
+
 </body>
 </html>
