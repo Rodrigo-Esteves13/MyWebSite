@@ -1,64 +1,9 @@
-body.light-mode {
-    background-color: #fff;
-    color: #222;
-}
-
-
-body.dark-mode {
-    background-color: #222;
-    color: #fff;
-}
-
-.header.light-mode {
-    background-color: #fff;
-    color: #505050;
-}
-
-
-.header.dark-mode {
-    background-color: #505050;
-    color: #fff;
-}
-
-.sidebar.light-mode {
-    background-color: #fff;
-    color: #505050;
-}
-
-
-.sidebar.dark-mode {
-    background-color: #505050;
-    color: #fff;
-}
-
-.logos.light-mode {
-    color: #222;
-}
-
-
-.logos.dark-mode {
-    color: #fff;
-}
-
-.black-section.light-mode {
-    background-color: #fff;
-    color: #222;}
-
-
-.black-section.dark-mode {
-    background-color: #222;
-    color: #fff;
-}
-
-
-
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 70px;
     padding: 0 20px;
-    border-color: black 2px;
     margin-left: 50px;
     width: calc(100% - 50px);
 }
@@ -69,7 +14,18 @@ body.dark-mode {
     margin-left: 100px;
     display: flex;
     align-items: center;
-    color: white;
+    text-decoration: none;
+}
+
+.logo-text{
+    text-decoration: none;
+}
+
+.buyCoffee{
+    text-decoration: none;
+}
+
+.fa-coffee{
     text-decoration: none;
 }
 
@@ -80,7 +36,6 @@ body.dark-mode {
 
 .header__nav a {
     margin-right: 10px;
-    color: white;
     text-decoration: none;
 }
 
@@ -93,7 +48,7 @@ body.dark-mode {
     border-radius: 25px;
     cursor: pointer;
     padding: 2px;
-    border: 3px solid #fff;
+    border: 3px solid #222;
 }
 
 .toggle-checkbox {
@@ -132,22 +87,22 @@ body.dark-mode {
 }
 
 .sun-icon {
-    margin-left: 5px; /* Adjust as needed */
+    margin-left: 5px;
 }
 
 .moon-icon {
-    margin-right: 5px; /* Adjust as needed */
+    margin-right: 5px;
 }
 
 .icons i {
-    font-size: 20px; /* Adjust the font size as needed */
+    font-size: 20px;
     color: white;
 }
 
 .toggle-button {
     position: absolute;
     top: -1px;
-    left: 22px; /* Adjust as needed */
+    left: 22px;
     width: 22px;
     height: 22px;
     border-radius: 50%;
@@ -156,12 +111,10 @@ body.dark-mode {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-/* Dark mode styles */
 .toggle-checkbox:checked + .toggle-label .toggle-button {
     transform: translateX(35px);
 }
 
-/* Light mode styles */
 .toggle-checkbox:not(:checked) + .toggle-label .toggle-button {
     transform: translateX(5px);
 }

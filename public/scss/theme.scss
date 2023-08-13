@@ -1,0 +1,52 @@
+:root {
+    --bg-color-light: #fff;
+    --bg-color-dark: #222;
+    --text-color-light: #222;
+    --text-color-dark: #fff;
+}
+
+body.light-mode {
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+}
+
+body.dark-mode {
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
+}
+
+.header.light-mode,
+.sidebar.light-mode,
+.black-section.light-mode,
+.logo-text.light-mode,
+.header__nav.light-mode,
+.buyCoffee.light-mode,
+.fa-coffee.light-mode,
+.profile-info.light-mode
+{
+    background-color: #FAF9F6;
+    color: var(--text-color-light);
+}
+
+.header.dark-mode,
+.sidebar.dark-mode,
+.black-section.dark-mode,
+.logo-text.dark-mode,
+.header__nav.dark-mode,
+.buyCoffee.dark-mode,
+.fa-coffee.dark-mode,
+.profile-info.dark-mode
+ {
+    background-color: #505050;
+    color: var(--text-color-dark);
+}
+
+// .sidebar-item a.light-mode
+// {
+//     color: var(--text-color-light);
+//     text-decoration: none;
+// } 
+// .sidebar-item a.dark-mode{
+//     text-decoration: none;
+//     color: var(--text-color-dark);
+// }

@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\ChatController;
+use App\Http\Controllers\NewsController;
+use App\Http\Controllers\AboutController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -37,3 +39,10 @@ Route::get('profile/{username}', [ProfileController::class, 'show'])->name('prof
 Route::get('/profile/{username}/edit', [App\Http\Controllers\ProfileController::class, 'edit'])->name('profile.edit');
 Route::put('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
 Route::delete('/profile/{username}', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+//news routes
+Route::get('/news', [NewsController::class, 'index'])->name('news.index');
+Route::get('/news/{id}', [NewsController::class, 'show'])->name('news.show');
+
+//about route
+Route::get('/about', [AboutController::class, 'index'])->name('about.index');

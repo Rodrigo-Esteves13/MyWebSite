@@ -6,6 +6,7 @@
     <title>REMS</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{ asset('css/header.blade.css') }}">
+    <link rel="stylesheet" href="{{ asset('scss/theme.scss') }}">
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -16,11 +17,11 @@
 <div class="header">
     <div class="left-section">
         <a href="{{ route('welcome') }}" class="logo">
-        <div class="logo-text" style="color: white; text-decoration: none;">REMS</div>
+        <div class="logo-text">REMS</div>
         </a>
     </div>
     <div class="buy-coffee">
-            <span id="buyCoffeeBtn">Buy me a coffee</span>
+            <span id="buyCoffeeBtn" class="buyCoffee">Buy me a coffee</span>
             <i class="fas fa-coffee"></i>
         </div>
 <nav class="header__nav">

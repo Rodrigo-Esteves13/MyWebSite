@@ -47,13 +47,11 @@ footer {
 }
 
 .black-section {
-    background-color: black;
     text-align: center;
     padding: 20px;
 }
 
 .black-section p {
-    color: white;
     font-size: 14px;
     margin: 0;
 }
