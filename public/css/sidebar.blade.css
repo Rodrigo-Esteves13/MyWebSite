@@ -28,7 +28,6 @@ body {
     font-size: 16px;
     text-align: center;
     width: 100%;
-    transition: background-color 0.3s;
     color: white;
     text-decoration: none;
 }
@@ -110,7 +109,6 @@ body {
     font-size: 1.5rem;
     margin-bottom: 5px;
     display: block;
-    transition: color 0.3s;
 }
 
 .auth-links:hover {

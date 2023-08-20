@@ -32,7 +32,6 @@ footer {
     display: flex;
     align-items: center;
     margin: 0 100px;
-    color: white;
     font-size: 20px;
 }
 
@@ -42,6 +41,10 @@ footer {
 }
 
 .app-name {
+    font-size: 20px;
+    margin-left: 10px; /* Added space between logo and text */
+}
+.app-name.linkedin{
     font-size: 20px;
     margin-left: 10px; /* Added space between logo and text */
 }

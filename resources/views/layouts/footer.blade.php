@@ -12,29 +12,25 @@
 <body>
     <!-- Your page content here -->
 
-    <footer>
-        <div class="logo-section">
-            <div class="logos">
-                <a style="color: white; text-decoration: none;" href="https://www.instagram.com/esteves_rodrigo99/" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a style="color: white; text-decoration: none;" href="https://www.instagram.com/esteves_rodrigo99/" target="_blank" rel="noopener noreferrer">
-                    <span class="app-name">Instagram</span>
-                </a>
-            </div>
-            <div class="logos">
-                <a style="color: white; text-decoration: none;" href="https://www.linkedin.com/in/rodrigo-esteves99/" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a style="color: white; text-decoration: none;" href="https://www.linkedin.com/in/rodrigo-esteves99/" target="_blank" rel="noopener noreferrer">
-                    <span class="app-name">LinkedIn</span>
-                </a>
-            </div>
+<footer>
+    <div class="logo-section">
+        <div class="logos">
+            <a style="color: white; text-decoration: none;" href="https://www.instagram.com/esteves_rodrigo99/" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-instagram"></i>
+                <span class="app-name">Instagram</span>
+            </a>
         </div>
-        <div class="black-section">
-            <p>&copy; 2023 REMS. All rights reserved.</p>
+        <div class="logos">
+            <a style="color: white; text-decoration: none;" href="https://www.linkedin.com/in/rodrigo-esteves99/" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-linkedin"></i>
+                <span class="app-name linkedin">LinkedIn</span>
+            </a>
         </div>
-    </footer>
+    </div>
+    <div class="black-section">
+        <p>&copy; 2023 REMS. All rights reserved.</p>
+    </div>
+</footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
     <script src="{{ asset('js/theme.js') }}"></script>
 

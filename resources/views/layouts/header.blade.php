@@ -17,7 +17,7 @@
 <div class="header">
     <div class="left-section">
         <a href="{{ route('welcome') }}" class="logo">
-        <div class="logo-text">REMS</div>
+        <div style="text-decoration: none;" class="logo-text">REMS</div>
         </a>
     </div>
     <div class="buy-coffee">

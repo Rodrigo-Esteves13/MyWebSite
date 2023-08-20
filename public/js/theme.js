@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('theme', theme);
         
         // Update theme classes for various elements
-        const elementsToUpdate = ['.header', '.sidebar', '.logos', '.logo-text', '.buyCoffee', '.black-section', '.fa-coffee', '.profile-info'];
+        const elementsToUpdate = ['.header', '.sidebar', '.logos', '.logo-text', '.buyCoffee', '.black-section', '.fa-coffee', '.profile-info', '.app-name', '.app-name.linkedin',];
         elementsToUpdate.forEach(selector => {
             const element = document.querySelector(selector);
             element.classList.remove('dark-mode', 'light-mode');
