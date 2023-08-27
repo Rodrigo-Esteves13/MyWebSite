@@ -41,16 +41,33 @@ body.dark-mode {
     color: var(--text-color-dark);
  }
 
- .logos.dark-mode i,
+ .logos.dark-mode svg,
+ .logos.linkedin.dark-mode svg,
  .app-name.dark-mode,
- .app-name.linkedin.dark-mode 
+ .app-name.linkedin.dark-mode,
+ .auth-links.dark-mode svg
   {
      color: var(--text-color-dark);
  }
  
- .logos.light-mode i,
+ .logos.light-mode svg,
+ .logos.linkedin.light-mode svg,
  .app-name.light-mode,
- .app-name.linkedin.light-mode {
+ .app-name.linkedin.light-mode,
+ .auth-links.light-mode svg
+ {
      color: var(--text-color-light);
  }
 
+/* Hover effect for light mode */
+.light-mode .auth-links:hover,
+.light-mode .sidebar-item:hover {
+    background-color: #ddd;
+}
+
+/* Hover effect for dark mode */
+.dark-mode .auth-links:hover,
+.dark-mode .sidebar-item:hover {
+    background-color: #444;
+}
+    

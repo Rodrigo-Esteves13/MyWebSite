@@ -1,0 +1,46 @@
+/* Reset some default styles */
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+main {
+    max-width: 800px;
+    margin: 5rem auto;
+    padding: 2%;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.9);
+    text-align: center;
+}
+
+.profile {
+    text-align: center;
+}
+
+.profile img {
+    width: 150px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.details h3 {
+    margin-top: 1.5rem;
+    padding: 20px;
+}
+
+.details p {
+    line-height: 1.5;
+}

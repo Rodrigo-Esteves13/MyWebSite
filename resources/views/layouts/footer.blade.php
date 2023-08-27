@@ -20,7 +20,7 @@
                 <span class="app-name">Instagram</span>
             </a>
         </div>
-        <div class="logos">
+        <div class="logos linkedin">
             <a style="color: white; text-decoration: none;" href="https://www.linkedin.com/in/rodrigo-esteves99/" target="_blank" rel="noopener noreferrer">
                 <i class="fab fa-linkedin"></i>
                 <span class="app-name linkedin">LinkedIn</span>
