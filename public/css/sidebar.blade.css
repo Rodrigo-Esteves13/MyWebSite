@@ -28,18 +28,7 @@ body {
     font-size: 16px;
     text-align: center;
     width: 100%;
-    color: white;
     text-decoration: none;
-}
-
-.profile-picture {
-    margin-bottom: 20px;
-}
-
-.profile-picture img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
 }
 
 .sidebar ul {
@@ -166,4 +155,19 @@ body {
 
 .dropdown-toggle {
     cursor: pointer;
+}
+.username .default-text {
+    display: inline-block;
+}
+
+.username .username-text {
+    display: none;
+}
+
+.username:hover .default-text {
+    display: none;
+}
+
+.username:hover .username-text {
+    display: inline-block;
 }

@@ -22,7 +22,8 @@ body.dark-mode {
 .header__nav.light-mode,
 .buyCoffee.light-mode,
 .fa-coffee.light-mode,
-.profile-info.light-mode
+.profile-info.light-mode,
+.dropdown-toggle.light-mode
 {
     background-color: #FAF9F6;
     color: var(--text-color-light);
@@ -35,7 +36,8 @@ body.dark-mode {
 .header__nav.dark-mode,
 .buyCoffee.dark-mode,
 .fa-coffee.dark-mode,
-.profile-info.dark-mode
+.profile-info.dark-mode,
+.dropdown-toggle.dark-mode
  {
     background-color: #505050;
     color: var(--text-color-dark);

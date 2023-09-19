@@ -13,12 +13,6 @@
   <div class="profile-table">
     <h1>User Profile</h1>
     <table>
-      @if(Auth::check()) <!-- Check if the user is logged in -->
-      <tr>
-        <th>Profile Picture</th>
-        <td><img src="{{ asset('storage/profilePic/' . $user->profile_picture) }}" alt="Profile Picture"></td>
-      </tr>
-      @endif
       <tr>
         <th>Name</th>
         <td>{{ $user->name }}</td>

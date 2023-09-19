@@ -39,11 +39,11 @@ $isRegisterPage = Route::currentRouteName() === 'register';
             </ul>
             @else
             <div class="profile-picture">
-                <img src="{{ asset('public/storage/profilePic/' . Auth::user()->profile_picture) }}" alt="Profile Picture">
             </div>
             <div class="username dropdown" id="profile-dropdown">
-                <a class="dropdown-toggle" style="text-decoration: none; color: white;">
-                    {{ Auth::user()->username }}
+                <a class="dropdown-toggle" style="text-decoration: none;">
+                    <span class="default-text">User</span>
+                    <span class="username-text">{{ Auth::user()->username }}</span>
                 </a>
                 <ul class="dropdown-menu">
                     <li><a href="{{ route('profile.show', ['username' => Auth::user()->username]) }}">Show Profile <i class="fas fa-user"></i></a></li>
@@ -63,7 +63,7 @@ $isRegisterPage = Route::currentRouteName() === 'register';
                     <a href="{{ url('/projects') }}">
                         <div class="sidebar-item-content">
                             <i class="fas fa-project-diagram"></i>
-                            <span class="sidebar-text">My Projects</span>
+                            <span class="sidebar-text">Our Projects</span>
                         </div>
                     </a>
                 </li>
@@ -71,15 +71,7 @@ $isRegisterPage = Route::currentRouteName() === 'register';
                     <a href="{{ url('/about') }}">
                         <div class="sidebar-item-content">
                             <i class="fas fa-user"></i>
-                            <span class="sidebar-text">About Me</span>
-                        </div>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a href="{{ url('/chat') }}">
-                        <div class="sidebar-item-content">
-                            <i class="fas fa-comments"></i>
-                            <span class="sidebar-text">Chat with me</span>
+                            <span class="sidebar-text">About Us</span>
                         </div>
                     </a>
                 </li>

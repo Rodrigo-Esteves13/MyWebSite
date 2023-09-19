@@ -4,16 +4,21 @@ document.addEventListener('DOMContentLoaded', function() {
         const body = document.body;
         body.classList.remove('dark-mode', 'light-mode');
         body.classList.add(theme + '-mode');
-        
+
         // Store the theme preference in local storage
         localStorage.setItem('theme', theme);
-        
+
         // Update theme classes for various elements
-        const elementsToUpdate = ['.header', '.sidebar', '.logos', '.logos.linkedin', '.logo-text', '.buyCoffee', '.black-section', '.fa-coffee', '.profile-info', '.app-name', '.app-name.linkedin','.auth-links a','.sidebar-item','.auth-links'];
-        elementsToUpdate.forEach(selector => {
+        const selectorsToUpdate = [
+            '.header', '.sidebar', '.logos', '.logos.linkedin', '.logo-text', '.buyCoffee', '.black-section', '.fa-coffee', '.profile-info', '.app-name', '.app-name.linkedin', '.auth-links a', '.sidebar-item', '.auth-links', '.dropdown-toggle'
+        ];
+
+        selectorsToUpdate.forEach(selector => {
             const element = document.querySelector(selector);
-            element.classList.remove('dark-mode', 'light-mode');
-            element.classList.add(theme + '-mode');
+            if (element) {
+                element.classList.remove('dark-mode', 'light-mode');
+                element.classList.add(theme + '-mode');
+            }
         });
     }
 

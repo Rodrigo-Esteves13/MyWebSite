@@ -5,10 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
-use App\Providers\AuthServiceProvider;
-use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
 
 class ProfileController extends Controller
 {
@@ -69,7 +67,7 @@ class ProfileController extends Controller
         // Save the changes
         $userToUpdate->save();
     
-        // Update the Auth user instance with the new username and email
+        // Update the Auth user instance with the new username, email, and profile picture
         $user->name = $userToUpdate->name;
         $user->username = $userToUpdate->username;
         $user->email = $userToUpdate->email;
@@ -88,5 +86,4 @@ class ProfileController extends Controller
     
         return view('auth.edit', compact('user', 'isEditable'));
     }
-        
 }

@@ -44,3 +44,33 @@ main {
 .details p {
     line-height: 1.5;
 }
+
+/* Navigation arrows */
+.nav-arrow {
+    font-size: 20px;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: background-color 0.3s, transform 0.3s;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Style for the left arrow */
+#prev-section {
+    left: 450px; /* Position the left arrow to the left */
+}
+
+/* Style for the right arrow */
+#next-section {
+    right: 450px; /* Position the right arrow to the right */
+}
+
+.nav-arrow:hover {
+    background-color: #0056b3; /* Darker background on hover */
+}

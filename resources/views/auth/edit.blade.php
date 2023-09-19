@@ -12,14 +12,6 @@
           <form action="{{ route('profile.update') }}" method="POST">
             @csrf
             <div class="form-group">
-                <label for="profile_picture">Profile Picture</label>
-                <input id="profile_picture" type="file" class="form-control @error('profile_picture') is-invalid @enderror" name="profile_picture" accept="image/*">
-                @error('profile_picture')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-            </div><br>
             <label for="name">Name:</label><br>
             <input type="text" name="name" id="name" value="{{ old('name', $user->name) }}" required><br>
             <label for="username">Username:</label>

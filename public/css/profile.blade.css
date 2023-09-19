@@ -77,6 +77,27 @@
     /* Your existing header styles */
   }
   
-  /* Additional styles specific to your profile page */
-  /* Add any additional styles for your profile page here */
-  
+  .round-profile-pic {
+    width: 100px; /* Set the desired width */
+    height: 100px; /* Set the desired height */
+    border-radius: 50%; /* Make it a circle by setting border-radius to 50% */
+    overflow: hidden; /* Hide any content outside the circular container */
+}
+
+.round-profile-pic img {
+    width: 100%; /* Make the image take up the entire circular container */
+    height: 100%; /* Make the image take up the entire circular container */
+    object-fit: cover; /* Maintain aspect ratio and cover the entire circular area */
+}
+.round-profile-pic::after {
+  content: '{{ $user->name }}'; /* Use user's name or username */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 5px;
+  text-align: center;
+  font-size: 14px;
+}
