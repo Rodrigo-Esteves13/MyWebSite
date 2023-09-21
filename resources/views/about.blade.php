@@ -32,8 +32,21 @@
             </div>
         </div>
         <div id="other-section" class="section">
-            <!-- Other section content here -->
-            <!-- Add content for other sections as needed -->
+        <div class="profile">
+                <img src="profileJoao.jpg" alt="Profile Picture">
+                <h2>João Pereira</h2>
+                <p>17-year-old tech enthusiast</p>
+            </div>
+            <div class="details">
+                <h3>Education</h3>
+                <p>Studying at Escola Profissional Bento de Jesus Caraça</p>
+                <h3>Experience</h3>
+                <p>Worked as a application support intern at Natixis in Porto</p>
+                <p>Specialized in supporting applications and scripting</p>
+                <h3>Languages</h3>
+                <p>Favorite: PHP, Python, JS</p>
+                <p>Also familiar with: C++, C#, PowerShell, HTML, CSS</p>
+            </div>
         </div>
 
         <!-- Navigation arrows -->

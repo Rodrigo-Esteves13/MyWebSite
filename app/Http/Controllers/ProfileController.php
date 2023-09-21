@@ -67,7 +67,7 @@ class ProfileController extends Controller
         // Save the changes
         $userToUpdate->save();
     
-        // Update the Auth user instance with the new username, email, and profile picture
+        // Update the Auth user instance with the new username, and email
         $user->name = $userToUpdate->name;
         $user->username = $userToUpdate->username;
         $user->email = $userToUpdate->email;
