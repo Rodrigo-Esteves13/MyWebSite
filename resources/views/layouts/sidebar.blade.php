@@ -38,16 +38,16 @@ $isRegisterPage = Route::currentRouteName() === 'register';
                 </li>
             </ul>
             @else
-            <div class="profile-picture">
-            </div>
             <div class="username dropdown" id="profile-dropdown">
                 <a class="dropdown-toggle" style="text-decoration: none;">
                     <span class="default-text">User</span>
                     <span class="username-text">{{ Auth::user()->username }}</span>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a href="{{ route('profile.show', ['username' => Auth::user()->username]) }}">Show Profile <i class="fas fa-user"></i></a></li>
-                    <li>
+                    <li class="light-mode dark-mode"> <!-- Add both light-mode and dark-mode classes -->
+                        <a href="{{ route('profile.show', ['username' => Auth::user()->username]) }}">Show Profile <i class="fas fa-user"></i></a>
+                    </li>
+                    <li class="light-mode dark-mode"> <!-- Add both light-mode and dark-mode classes -->
                         <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             Logout  <i class="fas fa-sign-out-alt"></i>
                         </a>

@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Update theme classes for various elements
         const selectorsToUpdate = [
-            '.header', '.sidebar', '.logos', '.logos.linkedin', '.logo-text', '.buyCoffee', '.black-section', '.fa-coffee', '.profile-info', '.app-name', '.app-name.linkedin', '.auth-links a', '.sidebar-item', '.auth-links', '.dropdown-toggle', '.modal-content'
+            '.header', '.sidebar', '.logos', '.logos.linkedin', '.logo-text', '.buyCoffee', '.black-section', '.fa-coffee', '.profile-info', '.app-name', '.app-name.linkedin', '.auth-links a', '.sidebar-item', '.auth-links', '.dropdown-toggle', '.modal-content', '.profile-dropdown', '.profile-table'
         ];
 
         selectorsToUpdate.forEach(selector => {

@@ -24,7 +24,10 @@ body.dark-mode {
 .fa-coffee.light-mode,
 .profile-info.light-mode,
 .dropdown-toggle.light-mode,
-.modal-content.light-mode
+.modal-content.light-mode,
+.profile-dropdown.light-mode,
+.username.dropdown.light-mode,
+.profile-table.light-mode
 {
     background-color: #FAF9F6;
     color: var(--text-color-light);
@@ -39,7 +42,10 @@ body.dark-mode {
 .fa-coffee.dark-mode,
 .profile-info.dark-mode,
 .dropdown-toggle.dark-mode,
-.modal-content.dark-mode
+.modal-content.dark-mode,
+.profile-dropdown.dark-mode,
+.username.dropdown.dark-mode,
+.profile-table.dark-mode
  {
     background-color: #505050;
     color: var(--text-color-dark);
@@ -74,4 +80,46 @@ body.dark-mode {
 .dark-mode .sidebar-item:hover {
     background-color: #444;
 }
-    
+    /* Light Mode Profile Dropdown */
+.light-mode .username.dropdown {
+    background-color: #FAF9F6;
+    color: var(--text-color-light);
+}
+
+.light-mode .username.dropdown .dropdown-menu li {
+    background-color: #FAF9F6;
+}
+
+.light-mode .username.dropdown .dropdown-menu li a {
+    color: var(--text-color-light);
+}
+
+.light-mode .username.dropdown .dropdown-menu li a:hover {
+    background-color: #ddd;
+}
+
+.light-mode .username.dropdown .dropdown-menu li i {
+    color: var(--text-color-light);
+}
+
+/* Dark Mode Profile Dropdown */
+.dark-mode .username.dropdown {
+    background-color: #505050;
+    color: var(--text-color-dark);
+}
+
+.dark-mode .username.dropdown .dropdown-menu li {
+    background-color: #505050;
+}
+
+.dark-mode .username.dropdown .dropdown-menu li a {
+    color: var(--text-color-dark);
+}
+
+.dark-mode .username.dropdown .dropdown-menu li a:hover {
+    background-color: #444;
+}
+
+.dark-mode .username.dropdown .dropdown-menu li i {
+    color: var(--text-color-dark);
+}

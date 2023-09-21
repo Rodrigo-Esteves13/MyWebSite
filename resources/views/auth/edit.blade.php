@@ -12,13 +12,13 @@
           <form action="{{ route('profile.update') }}" method="POST">
             @csrf
             <div class="form-group">
-            <label for="name">Name:</label><br>
+            <label for="name">Name:</label>
             <input type="text" name="name" id="name" value="{{ old('name', $user->name) }}" required><br>
             <label for="username">Username:</label>
             <input type="text" name="username" id="username" value="{{ old('username', $user->username) }}" required><br>
             <label for="email">Email:</label>
             <input type="email" name="email" id="email" value="{{ old('email', $user->email) }}" required><br>
-            <button type="submit">Update Profile</button>
+            <button type="submit" class="update-button">Update Profile</button>
           </form>
         </td>
       </tr>
@@ -34,7 +34,7 @@
     <form action="{{ route('profile.destroy', $user->username) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete your account?')">
       @csrf
       @method('DELETE')
-      <button type="submit" class="btn btn-danger">Delete Account</button>
+      <button type="submit" class="btn btn-danger custom-delete-button">Delete Account</button>
     </form>
   </div>
 </div>

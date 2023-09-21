@@ -76,28 +76,57 @@
     z-index: 2;
     /* Your existing header styles */
   }
-  
-  .round-profile-pic {
-    width: 100px; /* Set the desired width */
-    height: 100px; /* Set the desired height */
-    border-radius: 50%; /* Make it a circle by setting border-radius to 50% */
-    overflow: hidden; /* Hide any content outside the circular container */
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 10px;
 }
 
-.round-profile-pic img {
-    width: 100%; /* Make the image take up the entire circular container */
-    height: 100%; /* Make the image take up the entire circular container */
-    object-fit: cover; /* Maintain aspect ratio and cover the entire circular area */
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
 }
-.round-profile-pic::after {
-  content: '{{ $user->name }}'; /* Use user's name or username */
-  position: absolute;
-  bottom: 0;
-  left: 0;
+
+input[type="text"],
+input[type="email"] {
   width: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  color: #fff;
-  padding: 5px;
-  text-align: center;
-  font-size: 14px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
+
+/* Update Profile Button */
+.update-button {
+  background-color: #007bff; /* Blue color */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  margin-top: 10px;
+  margin-left: 100px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.update-button:hover {
+  background-color: #0056b3; /* Darker blue color */
+}
+
+/* Delete Account Button */
+.custom-delete-button {
+  background-color: #dc3545; /* Red color */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  margin-top: 10px;
+  margin-left: 110px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.custom-delete-button:hover {
+  background-color: #c82333; /* Darker red color */
+}
+
