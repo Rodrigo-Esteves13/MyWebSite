@@ -16,7 +16,7 @@
         <div id="about-section" class="section">
             <!-- About Us content here -->
             <div class="profile">
-                <img src="profileRodrigo.jpg" alt="Profile Picture">
+                <img src="img/profileRodrigo.jpg" alt="Profile Picture">
                 <h2>Rodrigo Esteves</h2>
                 <p>17-year-old tech enthusiast</p>
             </div>
