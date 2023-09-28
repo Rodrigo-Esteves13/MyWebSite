@@ -48,7 +48,23 @@
                 <p>Also familiar with: C++, C#, PowerShell, HTML, CSS</p>
             </div>
         </div>
-
+        <div id="others-section" class="section">
+        <div class="profile">
+                <img src="profileDaniel.jpg" alt="Profile Picture">
+                <h2>Daniel Mendes</h2>
+                <p>17-year-old tech enthusiast</p>
+            </div>
+            <div class="details">
+                <h3>Education</h3>
+                <p>Studying at Escola Profissional Bento de Jesus Caraça</p>
+                <h3>Experience</h3>
+                <p>Worked at Bos in Porto</p>
+                <p>Specialized in ?</p>
+                <h3>Languages</h3>
+                <p>Favorite: </p>
+                <p>Also familiar with: </p>
+            </div>
+        </div>
         <!-- Navigation arrows -->
         <button id="prev-section" class="nav-arrow">&#9664;</button>
         <button id="next-section" class="nav-arrow">&#9654;</button>

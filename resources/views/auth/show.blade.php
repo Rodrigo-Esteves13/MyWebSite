@@ -8,7 +8,7 @@
 @include('layouts.header')
 @include('layouts.sidebar')
 <link rel="stylesheet" href="{{ asset('css/profile.blade.css') }}">
-
+<link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 <div class="profile-container">
   <div class="profile-table">
     <h1>User Profile</h1>

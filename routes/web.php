@@ -36,9 +36,17 @@ Route::get('/profile/{username}/edit', [App\Http\Controllers\ProfileController::
 Route::put('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
 Route::delete('/profile/{username}', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-//news routes
-Route::get('/news', [NewsController::class, 'news'])->name('news');
-Route::get('/news/{id}', [NewsController::class, 'show'])->name('news.show');
+// News routes
+Route::prefix('news')->group(function () {
+    Route::get('/', [NewsController::class, 'news'])->name('news');
+    Route::get('/{id}', [NewsController::class, 'show'])->name('news.show');
+    Route::get('/{id}/edit', [NewsController::class, 'edit'])->name('news.edit');
+    Route::post('/store', [NewsController::class, 'store'])->name('news.store');
+    Route::put('/{id}', [NewsController::class, 'update'])->name('news.update');
+    Route::delete('/{id}', [NewsController::class, 'destroy'])->name('news.destroy');
+    Route::post('/upload/image', [NewsController::class, 'uploadImage'])->name('news.upload.image');
+});
+
 
 //about route
 Route::get('/about', [AboutController::class, 'index'])->name('about.index');
