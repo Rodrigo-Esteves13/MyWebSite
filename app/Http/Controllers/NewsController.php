@@ -63,7 +63,7 @@ class NewsController extends Controller
         // Save the new news to the database
         $news->save();
     
-        return redirect()->route('news.index')->with('success', 'news created successfully.');
+        return redirect()->route('news')->with('success', 'news created successfully.');
     }
 
 

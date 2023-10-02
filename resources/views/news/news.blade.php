@@ -37,10 +37,10 @@
             @foreach ($news as $news1)
             <a href="{{ route('news.show', ['id' => $news1->id]) }}" class="news-item">
                 <div class="thumbnail">
-                    <img src="{{ asset('storage/' . $news->thumbnail) }}" alt="{{ $news->title }}">
+                    <img src="{{ asset('storage/' . $news1->thumbnail) }}" alt="{{ $news1->title }}">
                 </div>
                 <div class="news-details">
-                    <h3 class="news-title">{{ $news->title }}</h3><br>
+                    <h3 class="news-title">{{ $news1->title }}</h3><br>
                     @if (auth()->check() && auth()->user()->isAdmin())
                     <form action="{{ route('news.edit', ['id' => $news1->id]) }}" method="GET">
                         <button type="submit" class="edit-button">

@@ -255,7 +255,55 @@ button:hover {
     background-color: #dc3545;
     color: #fff;
 }
+.editnews-Container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
 
+.editnews-Container h1 {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.delete-button {
+    background-color: #dc3545;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
 /* Add Font Awesome icons to the buttons */
 .btn-primary::before {
     content: "\f06e"; /* Eye icon code from Font Awesome */
