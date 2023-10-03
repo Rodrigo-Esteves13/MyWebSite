@@ -18,6 +18,7 @@ body {
     transition: width 0.3s;
 }
 
+
 .sidebar:hover {
     width: 170px;
 }

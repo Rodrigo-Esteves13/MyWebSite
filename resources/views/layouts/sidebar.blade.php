@@ -12,8 +12,20 @@ $isRegisterPage = Route::currentRouteName() === 'register';
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{ asset('css/sidebar.blade.css') }}">
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>REMS</title>
+    <style>
+        /*style to prevent blue underling hrefs, if i put on css in does not work*/
+        a {
+            text-decoration: none; /* Remove underline */
+            color: inherit; /* Use the parent color */
+            cursor: pointer; /* Set cursor to pointer on hover */
+        }
+        a:hover {
+            text-decoration: none; /* Remove underline on hover */
+            color: inherit; /* Use the parent color on hover */
+        }
+    </style>
 </head>
 <body>
     <div class="sidebar" id="sidebar">

@@ -33,7 +33,7 @@
         </div>
         <div id="other-section" class="section">
         <div class="profile">
-                <img src="profileJoao.jpg" alt="Profile Picture">
+                <img src="img/profileJoao.jpg" alt="Profile Picture João">
                 <h2>João Pereira</h2>
                 <p>17-year-old tech enthusiast</p>
             </div>
@@ -50,7 +50,7 @@
         </div>
         <div id="others-section" class="section">
         <div class="profile">
-                <img src="profileDaniel.jpg" alt="Profile Picture">
+                <img src="img/profileDaniel.jpg" alt="Profile Picture Daniel">
                 <h2>Daniel Mendes</h2>
                 <p>17-year-old tech enthusiast</p>
             </div>
