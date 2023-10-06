@@ -10,29 +10,41 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 </head>
 <body>
-    <!-- Your page content here -->
-
-<footer>
-    <div class="logo-section">
-        <div class="logos">
-            <a style="color: white; text-decoration: none;" href="https://www.instagram.com/esteves_rodrigo99/" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-instagram"></i>
-                <span class="app-name">Instagram</span>
-            </a>
+    <footer>
+        <div class="logo-section">
+            <div class="logos">
+                <a style="color: white; text-decoration: none;" href="#" id="instagram-link">
+                    <i class="fab fa-instagram"></i>
+                    <span class="app-name">Instagram</span>
+                </a>
+            </div>
+            <div class="logos linkedin">
+                <a style="color: white; text-decoration: none;" href="#" id="linkedin-link">
+                    <i class="fab fa-linkedin"></i>
+                    <span class="app-name linkedin">LinkedIn</span>
+                </a>
+            </div>
         </div>
-        <div class="logos linkedin">
-            <a style="color: white; text-decoration: none;" href="https://www.linkedin.com/in/rodrigo-esteves99/" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-linkedin"></i>
-                <span class="app-name linkedin">LinkedIn</span>
-            </a>
+        <div class="black-section">
+            <p>&copy; 2023 REMS. All rights reserved.</p>
         </div>
-    </div>
-    <div class="black-section">
-        <p>&copy; 2023 REMS. All rights reserved.</p>
-    </div>
-</footer>
+    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
     <script src="{{ asset('js/theme.js') }}"></script>
 
+    <script>
+        // JavaScript to open all Instagram links simultaneously when the Instagram logo is clicked
+        document.getElementById('instagram-link').addEventListener('click', function() {
+            window.open("https://www.instagram.com/esteves_rodrigo99/", '_blank');
+            window.open("https://www.instagram.com/sirgato10/", '_blank');
+            window.open("https://www.instagram.com/_.mendes._78/", '_blank');
+        });
+
+        // JavaScript to open all LinkedIn links simultaneously when the LinkedIn logo is clicked
+        document.getElementById('linkedin-link').addEventListener('click', function() {
+            window.open("https://www.linkedin.com/in/rodrigo-esteves99/", '_blank');
+            // Add more LinkedIn profile links here if needed
+        });
+    </script>
 </body>
 </html>
