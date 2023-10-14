@@ -59,10 +59,10 @@
                 <p>Studying at Escola Profissional Bento de Jesus Caraça</p>
                 <h3>Experience</h3>
                 <p>Worked at Bos in Porto</p>
-                <p>Specialized in ?</p>
+                <p>Specialized in Hardware and Operating Systems</p>
                 <h3>Languages</h3>
-                <p>Favorite: </p>
-                <p>Also familiar with: </p>
+                <p>Favorite:C++ </p>
+                <p>Also familiar with:C#, HTML, CSS, PHP</p>
             </div>
         </div>
         <!-- Navigation arrows -->

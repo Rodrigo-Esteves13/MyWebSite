@@ -7,10 +7,14 @@ use App\Http\Controllers\ProjectsController;
 use App\Http\Controllers\ChatController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\AboutController;
+use App\Models\News;
 
 Route::get('/', function () {
-    return view('welcome');
+    $mostRecentNews = News::latest('updated_at')->first();
+
+    return view('welcome', compact('mostRecentNews'));
 })->name('welcome');
+
 
 Route::get('/welcome', function () {
     return redirect()->route('welcome');
