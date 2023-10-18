@@ -27,7 +27,9 @@ body.dark-mode {
 .modal-content.light-mode,
 .profile-dropdown.light-mode,
 .username.dropdown.light-mode,
-.profile-table.light-mode
+.profile-table.light-mode,
+.project-item.light-mode,
+.news-item.light-mode
 {
     background-color: #FAF9F6;
     color: var(--text-color-light);
@@ -45,7 +47,9 @@ body.dark-mode {
 .modal-content.dark-mode,
 .profile-dropdown.dark-mode,
 .username.dropdown.dark-mode,
-.profile-table.dark-mode
+.profile-table.dark-mode,
+.project-item.dark-mode,
+.news-item.dark-mode
  {
     background-color: #505050;
     color: var(--text-color-dark);
@@ -55,7 +59,11 @@ body.dark-mode {
  .logos.linkedin.dark-mode svg,
  .app-name.dark-mode,
  .app-name.linkedin.dark-mode,
- .auth-links.dark-mode svg
+ .auth-links.dark-mode svg,
+ .project-title.dark-mode,
+ .project-description.dark-mode,
+ .news-title.dark-mode,
+ .news-description.dark-mode
   {
      color: var(--text-color-dark);
  }
@@ -64,7 +72,11 @@ body.dark-mode {
  .logos.linkedin.light-mode svg,
  .app-name.light-mode,
  .app-name.linkedin.light-mode,
- .auth-links.light-mode svg
+ .auth-links.light-mode svg,
+ .project-title.light-mode,
+ .project-description.light-mode,
+ .news-title.light-mode,
+ .news-description.light-mode
  {
      color: var(--text-color-light);
  }

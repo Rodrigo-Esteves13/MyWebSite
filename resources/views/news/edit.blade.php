@@ -2,7 +2,7 @@
 @include('layouts.sidebar')
 <link rel="stylesheet" href="{{ asset('css/news.blade.css') }}">
 
-<div class="editnews-Container">
+<div class="edit-news-container">
     <h1>Edit news</h1>
     <form action="{{ route('news.update', $news->id) }}" method="POST" enctype="multipart/form-data">
         @csrf

@@ -1,17 +1,19 @@
 body {
-  background-image: url('../img/tech1.gif');
-  background-repeat: no-repeat;
-  background-size: cover;
-  font-family: Arial, sans-serif;
-  color: #f1f1f1;
+  height: 100vh;
   margin: 0;
   padding: 0;
   overflow: hidden;
+  font-family: Arial, sans-serif;
+  color: #f1f1f1;
+  background-image: url('../img/tech1.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
   animation-name: slow-animation;
-  animation-duration: 10s; /* Adjust the duration as per your preference */
+  animation-duration: 10s;
   animation-timing-function: steps(1);
   animation-iteration-count: infinite;
 }
+
 
 @keyframes slow-animation {
   0% {

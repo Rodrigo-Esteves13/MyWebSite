@@ -12,21 +12,17 @@
 <body>
 <body>
 <div class="body-container">
-    <div class="news-container">
-        @if(isset($mostRecentNews))
-        <div class="news-item">
-            <a href="{{ route('news.show', ['id' => $mostRecentNews->id]) }}">
-                <div class="thumbnail">
-                    <img src="{{ asset('storage/' . $mostRecentNews->thumbnail) }}" alt="{{ $mostRecentNews->title }}">
-                </div>
-                <div class="news-details">
-                    <h3 class="news-title">{{ $mostRecentNews->title }}</h3><br>
-                </div>
-            </a>
+    @if(isset($mostRecentNews))
+    <a href="{{ route('news.show', ['id' => $mostRecentNews->id]) }}" class="news-item">
+        <div class="thumbnail">
+            <img src="{{ asset('storage/' . $mostRecentNews->thumbnail) }}" alt="{{ $mostRecentNews->title }}">
         </div>
-        @else
-        @endif
-    </div>
-    </div>
+        <div class="news-details">
+            <h3 class="news-title">{{ $mostRecentNews->title }}</h3><br>
+        </div>
+    </a>
+    @endif
+</div>
+
 </body>
 </html>

@@ -68,14 +68,7 @@
     margin-bottom: 20px;
   }
 
-  .header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 2;
-    /* Your existing header styles */
-  }
+
 
 /* Form Styles */
 .form-group {
