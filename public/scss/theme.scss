@@ -29,7 +29,8 @@ body.dark-mode {
 .username.dropdown.light-mode,
 .profile-table.light-mode,
 .project-item.light-mode,
-.news-item.light-mode
+.news-item.light-mode,
+.change-password-table.light-mode
 {
     background-color: #FAF9F6;
     color: var(--text-color-light);
@@ -49,7 +50,8 @@ body.dark-mode {
 .username.dropdown.dark-mode,
 .profile-table.dark-mode,
 .project-item.dark-mode,
-.news-item.dark-mode
+.news-item.dark-mode,
+.change-password-table.dark-mode
  {
     background-color: #505050;
     color: var(--text-color-dark);

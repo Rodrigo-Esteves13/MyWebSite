@@ -39,6 +39,9 @@ Route::get('profile/{username}', [ProfileController::class, 'show'])->name('prof
 Route::get('/profile/{username}/edit', [App\Http\Controllers\ProfileController::class, 'edit'])->name('profile.edit');
 Route::put('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
 Route::delete('/profile/{username}', [ProfileController::class, 'destroy'])->name('profile.destroy');
+Route::get('/profile/change-password/{username}', [ProfileController::class, 'showChangePasswordForm'])->name('profile.change-password');
+Route::post('/profile/change-password/{username}', [ProfileController::class, 'changePassword'])->name('profile.update-password');
+
 
 // News routes
 Route::prefix('news')->group(function () {

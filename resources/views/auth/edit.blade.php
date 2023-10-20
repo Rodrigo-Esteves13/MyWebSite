@@ -11,6 +11,7 @@
         <td colspan="2">
           <form action="{{ route('profile.update') }}" method="POST">
             @csrf
+            @method('PUT')
             <div class="form-group">
             <label for="name">Name:</label>
             <input type="text" name="name" id="name" value="{{ old('name', $user->name) }}" required><br>
@@ -18,6 +19,7 @@
             <input type="text" name="username" id="username" value="{{ old('username', $user->username) }}" required><br>
             <label for="email">Email:</label>
             <input type="email" name="email" id="email" value="{{ old('email', $user->email) }}" required><br>
+            <a href="{{ route('profile.change-password', ['username' => auth()->user()->username]) }}">Change Password</a>
             <button type="submit" class="update-button">Update Profile</button>
           </form>
         </td>

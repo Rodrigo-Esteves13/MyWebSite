@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Hash; // Import the Hash facade
 
 class ProfileController extends Controller
 {
@@ -75,8 +76,6 @@ class ProfileController extends Controller
         return redirect()->route('profile.show', ['username' => $user->username])->with('success', 'Profile updated successfully.');
     }
     
-    
-    
     public function edit()
     {
         $user = Auth::user();
@@ -86,4 +85,42 @@ class ProfileController extends Controller
     
         return view('auth.edit', compact('user', 'isEditable'));
     }
+
+    public function showChangePasswordForm($username)
+    {
+        // Retrieve the user by their username
+        $user = User::where('username', $username)->first();
+    
+        // Check if the user exists and the authenticated user is authorized
+        if ($user && Auth::id() === $user->id) {
+            return view('auth.passwords.change-password', ['user' => $user]);
+        }
+    
+        // Handle unauthorized access or user not found
+        abort(403); // You can customize this error response as needed.
+    }
+    
+
+public function changePassword(Request $request)
+{
+    $request->validate([
+        'current_password' => 'required',
+        'new_password' => 'required|confirmed',
+    ]);
+
+    $user = Auth::user();
+
+    // Check if the current password matches the user's actual password
+    if (Hash::check($request->input('current_password'), $user->password)) {
+        // Update the password using the update method
+        User::find($user->id)->update([
+            'password' => Hash::make($request->input('new_password')),
+        ]);
+
+        return redirect()->route('profile.show', ['username' => $user->username])->with('success', 'Password changed successfully.');
+    } else {
+        return back()->with('error', 'Current password is incorrect.');
+    }
+}
+
 }
