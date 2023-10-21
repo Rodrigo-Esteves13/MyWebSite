@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Function to toggle the mode
     function toggleMode(theme) {
         const body = document.body;
@@ -20,6 +20,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 element.classList.add(theme + '-mode');
             }
         });
+
+        // Update theme classes for .news-item elements
+        const newsItems = document.querySelectorAll('.news-item');
+        newsItems.forEach(item => {
+            item.classList.remove('dark-mode', 'light-mode');
+            item.classList.add(theme + '-mode');
+        });
+
+        // Update theme classes for .projects-details elements
+        const projectItem = document.querySelectorAll('.project-item');
+        projectItem.forEach(item => {
+            item.classList.remove('dark-mode', 'light-mode');
+            item.classList.add(theme + '-mode');
+        });
     }
 
     // Function to set the initial mode and theme classes
@@ -28,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const storedTheme = localStorage.getItem('theme');
         const toggleCheckbox = document.getElementById('modeSwitch');
 
-        if (storedTheme === 'dark') {
+        if (storedTheme === 'dark' || storedTheme === null){
             toggleMode('dark');
             toggleCheckbox.checked = true;
         } else {
@@ -41,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setInitialToggleState();
 
     // Event listener for the toggle button
-    document.getElementById('modeSwitch').addEventListener('change', function() {
+    document.getElementById('modeSwitch').addEventListener('change', function () {
         toggleMode(this.checked ? 'dark' : 'light');
     });
 

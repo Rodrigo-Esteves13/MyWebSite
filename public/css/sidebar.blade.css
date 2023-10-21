@@ -3,6 +3,70 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
 }
+/*mobile devices styles*/
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 60px;
+        transition: none;
+    }
+
+    .sidebar-item .sidebar-text {
+        display: block;
+        transition: none;
+    }
+
+    .auth-links .sidebar-text {
+        display: block;
+    }
+
+    /* Sidebar item styles */
+    .sidebar-item {
+        padding: 0;
+        margin: 0;
+        font-size: 15px;
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 25px 23px;
+    }
+
+    .sidebar .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: -2px;
+        left: 97px;
+        width: 100%;
+        padding: 0;
+        border-radius: 0 0 4px 4px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .sidebar .dropdown-menu li {
+        padding: 10px 0;
+        text-align: center;
+        width: 100%;
+    }
+    
+    .sidebar .dropdown-menu li a {
+        text-decoration: none;
+        display: block;
+        padding: 10px 0;
+        transition: background-color 0.3s;
+    }
+
+}
+/*desktop styles*/
+@media (min-width: 769px) {
 
 /* Sidebar styles */
 .sidebar {
@@ -23,21 +87,6 @@ body {
     width: 170px;
 }
 
-/* Profile info styles */
-.profile-info {
-    padding: 10px 0;
-    font-size: 16px;
-    text-align: center;
-    width: 100%;
-    text-decoration: none;
-}
-
-.sidebar ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-}
-
 /* Sidebar item styles */
 .sidebar-item {
     padding: 0;
@@ -51,60 +100,9 @@ body {
     padding: 25px 50px;
 }
 
-.sidebar-item i {
-    font-size: 1.5rem;
-    margin-bottom: 5px;
-    display: block;
-    transition: color 0.3s;
-}
-
-.sidebar-item a {
-    color: inherit; /* Use the parent color */
-    text-decoration: none; /* Remove underline */
-    cursor: pointer; /* Set cursor to pointer on hover */
-    width: 100%;
-}
 
 .sidebar:not(:hover) .sidebar-item .sidebar-text {
     display: none;
-}
-
-.sidebar-item:hover {
-    background-color: inherit;
-}
-
-.sidebar-item:hover .sidebar-text {
-    display: block;
-}
-
-/* Auth link styles */
-.auth-links {
-    padding: 0;
-    margin: 0;
-    font-size: 15px;
-    text-align: center;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 25px;
-}
-
-.auth-links a {
-    width: 100%;
-    color: inherit; /* Use the parent color */
-    text-decoration: none; /* Remove underline */
-    cursor: pointer; /* Set cursor to pointer on hover */
-}
-
-.auth-links i {
-    font-size: 1.5rem;
-    margin-bottom: 5px;
-    display: block;
-}
-
-.auth-links:hover {
-    background-color: inherit;
 }
 
 .auth-links:hover .sidebar-text {
@@ -115,21 +113,11 @@ body {
     display: none;
 }
 
-/* Dropdown menu styles */
-.sidebar .dropdown {
-    position: relative;
-}
-
-.sidebar .dropdown-toggle {
-    cursor: pointer;
-}
-
 .sidebar .dropdown-menu {
     display: none;
     position: absolute;
     top: -70px;
     left: 0;
-    background-color: #555;
     width: 100%;
     padding: 0;
     border-radius: 0 0 4px 4px;
@@ -143,15 +131,27 @@ body {
 }
 
 .sidebar .dropdown-menu li a {
-    color: white;
     text-decoration: none;
     display: block;
     padding: 10px 0;
     transition: background-color 0.3s;
 }
 
-.sidebar .dropdown-menu li a:hover {
-    background-color: #444;
+}
+
+
+/*itens shared between phone and desktop*/
+
+.sidebar .dropdown-toggle {
+    cursor: pointer;
+}
+
+.sidebar-item:hover {
+    background-color: inherit;
+}
+
+.sidebar-item:hover .sidebar-text {
+    display: block;
 }
 
 .dropdown-toggle {
@@ -171,4 +171,68 @@ body {
 
 .username:hover .username-text {
     display: inline-block;
+}
+
+/* Profile info styles (can be shared between desktop and mobile) */
+.profile-info {
+    padding: 10px 0;
+    font-size: 16px;
+    text-align: center;
+    width: 100%;
+    text-decoration: none;
+}
+
+/* Common styles for both desktop and mobile sidebars */
+.sidebar ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.auth-links:hover {
+    background-color: inherit;
+}
+/* Auth link styles */
+.auth-links {
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
+    }
+
+.auth-links a {
+    width: 100%;
+    color: inherit; /* Use the parent color */
+    text-decoration: none; /* Remove underline */
+    cursor: pointer; /* Set cursor to pointer on hover */
+}
+
+.auth-links i {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/*sidebar itens common styles*/
+.sidebar-item i {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    display: block;
+    transition: color 0.3s;
+}
+
+.sidebar-item a {
+    color: inherit; /* Use the parent color */
+    text-decoration: none; /* Remove underline */
+    cursor: pointer; /* Set cursor to pointer on hover */
+    width: 100%;
+}
+
+.sidebar .dropdown-menu li a:hover {
+    background-color: #444;
 }
