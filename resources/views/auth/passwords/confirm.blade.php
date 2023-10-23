@@ -1,6 +1,5 @@
 @include('layouts.header')
 @include('layouts.sidebar')
-@include('layouts.body')
 @include('layouts.footer')
 <div class="container">
     <div class="row justify-content-center">
