@@ -1,3 +1,35 @@
+/*mobile versions*/
+@media (max-width: 769px) {
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 70px;
+        padding: 0 20px;
+        margin-left: -10px;
+        width: 105%;
+        z-index: -9999;
+    }
+    
+    .logo {
+        font-size: 24px;
+        font-weight: bold;
+        font-family: "Nunito", sans-serif;
+        margin-left: 100px;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+    }
+
+    .desktop-text {
+        display: none;
+    }
+    
+}
+
+/*desktop versions*/
+@media (min-width: 769px) {
+    
 .header {
     display: flex;
     justify-content: space-between;
@@ -19,16 +51,27 @@
     text-decoration: none;
 }
 
-.logo-text{
-    text-decoration: none;
+.desktop-text {
+    display: inline;
+    margin-left: 5px; /* Adjust the margin as needed */
 }
 
-.buyCoffee{
+}
+
+/*common styles*/
+
+.header .logo {
+    flex: 1; /* Allow the logo to flexibly adjust its size */
+}
+
+
+.logo-text{
     text-decoration: none;
 }
 
 .fa-coffee{
     text-decoration: none;
+    flex: 1;
 }
 
 .header__nav {
@@ -98,7 +141,6 @@
 
 .icons i {
     font-size: 20px;
-    color: white;
 }
 
 .toggle-button {

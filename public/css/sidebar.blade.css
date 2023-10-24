@@ -170,7 +170,8 @@ body {
 }
 
 .username:hover .username-text {
-    display: inline-block;
+    display:block;
+
 }
 
 /* Profile info styles (can be shared between desktop and mobile) */

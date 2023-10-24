@@ -21,9 +21,12 @@
         </a>
     </div>
     <div class="buy-coffee">
-            <span id="buyCoffeeBtn" class="buyCoffee">Buy me a coffee</span>
+        <a id="buyCoffeeBtn" class="buyCoffee">
+            <span class="desktop-text">Buy me a coffee</span>
             <i class="fas fa-coffee"></i>
-        </div>
+        </a>
+    </div>
+
 <nav class="header__nav">
 <div class="toggle-mode">
     <input type="checkbox" id="modeSwitch" class="toggle-checkbox">
