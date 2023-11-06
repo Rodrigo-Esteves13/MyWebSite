@@ -24,16 +24,44 @@ body {
   }
 }
 
-.containers {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  height: 100vh;
-  overflow: auto;
+/* Mobile styles */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden !important; /* Prevent horizontal scrolling */
+    overflow-y: hidden !important; /* Prevent vertical scrolling */
+  }
+
+  .containers {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center vertically */
+    overflow: hidden;
+  }
+
+  .body-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center vertically */
+    height: 60vh; /* Adjust height as needed */
+    width: 500px;
+  }
 }
-.body-container {
-  display: flex;
-  justify-content: center; 
-  align-items: center; /* Center vertically */
-  height: 60vh;
+
+
+/* Desktop styles */
+@media (min-width: 769px) {
+  .containers {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      height: 100vh;
+      overflow: auto;
+  }
+  
+  .body-container {
+      display: flex;
+      justify-content: center; 
+      align-items: center; /* Center vertically */
+      height: 60vh;
+  }
 }

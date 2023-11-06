@@ -2,6 +2,8 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
+    overflow-x: hidden !important; /* Prevent horizontal scrolling */
+    overflow-y: hidden !important; /* Prevent vertical scrolling */
 }
 /*mobile devices styles*/
 @media (max-width: 768px) {
