@@ -16,7 +16,6 @@ import { createApp } from 'vue';
 
 const app = createApp({});
 
-import Vue from 'vue';
 import { QuillEditor } from 'vue-quill-editor';
 
 Vue.component('quill-editor', QuillEditor);
