@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <div class="loginRegister-container">
+    <div class="login-container">
         <div class="border"></div>
         <div class="segment"></div>
         <div class="card">

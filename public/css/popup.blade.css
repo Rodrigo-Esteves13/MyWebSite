@@ -1,29 +1,69 @@
-.popup {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: black;
-  opacity: 0.9;
-}
+/*mobile devices styles*/
+@media (max-width: 768px) {
+  .popup-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%; /* Increased width for mobile */
+    max-width: 400px; /* Added max-width for better control */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    text-align: left;
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin-left: 40px;
+    margin-top: -10px;
+  }
 
-.popup-content {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: white;
-  border-radius: 10px;
-  text-align: left;
-  font-family: Arial, sans-serif;
-  color: #333;
-}
+  .popup h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
 
+  .popup p {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .popup form {
+    margin-bottom: 10px;
+  }
+
+  .popup label {
+    display: block;
+    margin-bottom: 5px; /* Reduced margin between options */
+  }
+
+  .popup input[type="radio"] {
+    margin-right: 5px; /* Made radio options smaller */
+    font-size: 10px; /* Made radio options font size smaller */
+  }
+
+  .popup input[type="text"] {
+    width: 100%; /* Made text input full width for mobile */
+    margin-top: 5px; /* Added margin-top for spacing */
+  }
+}
+/*desktop styles*/
+@media (min-width: 769px) {
+  .popup-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    text-align: left;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
 
 .popup h2 {
   font-size: 24px;
@@ -51,6 +91,18 @@
 .popup input[type="text"] {
   width: 100px;
   margin-left: 5px;
+}
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.9;
 }
 
 .popup button {

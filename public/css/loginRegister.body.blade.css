@@ -1,13 +1,51 @@
-/* Container styles */
-.loginRegister-container {
+/*mobile devices styles*/
+@media (max-width: 768px) {
+  /* Container styles */
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom right, #000000, #ffffff);
+  }
+
+  .register-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     background: linear-gradient(to bottom right, #000000, #ffffff);
 }
-/* Card styles */
-.card {
+  /* Card styles */
+  .card {
+    width: 250px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 0 8px #000000, 0 0 0 12px #ffffff, 0 2px 4px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    position: relative;
+    margin-left: 100px;
+  }
+}
+/*desktop styles*/
+@media (min-width: 769px) {
+  /* Container styles */
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom right, #000000, #ffffff);
+  }
+  .register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom right, #000000, #ffffff);
+  }
+  /* Card styles */
+  .card {
     width: 400px;
     background-color: #ffffff;
     border-radius: 8px;
@@ -15,28 +53,27 @@
     overflow: hidden;
     position: relative;
   }
-  
+}
   .card-header {
-    padding: 20px;
+    padding: 10px;
     background-color: #000000;
     color: #ffffff;
   }
   
   .card-header h2 {
-    margin: 0;
-    font-size: 24px;
+    font-size: 14px;
     font-weight: bold;
   }
   
   .card-body {
-    padding: 20px;
+    padding: 10px;
     background-color: #ffffff;
     color: #000000;
   }
   
   /* Form styles */
   .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   
   label {
@@ -71,7 +108,13 @@
     font-weight: bold;
     cursor: pointer;
   }
-  
+  .btn-primary {
+    margin-top: 10px;
+    color: white;
+    background-color: #000000;
+    border-style: solid;
+    border-color: #000000;
+}
   button[type="submit"]:hover {
     background-color: #333333;
   }
