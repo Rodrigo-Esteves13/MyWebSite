@@ -1,0 +1,104 @@
+/* Common styles for both mobile and desktop */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.email-container {
+    max-width: 400px; /* Adjust the max-width as needed */
+    margin: 50px auto;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    border: none;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    padding: 8px 12px; /* Adjust the padding to reduce the button height and width */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .email-container {
+        margin: 20px;
+        padding: 10px;
+    }
+
+    .form-control {
+        margin-bottom: 8px;
+    }
+}
+
+/* Desktop styles */
+@media (min-width: 769px) {
+    .email-container {
+        margin: 50px auto;
+    }
+
+    .card-header {
+        background-color: white;
+        color: #000;
+        font-weight: bold;
+        padding: 10px;
+        border-radius: 5px 5px 0 0;
+        text-align: left; /* Align the text to the left */
+    }
+
+    .card-body {
+        padding: 20px;
+    }
+
+    .col-md-6 {
+        text-align: left; /* Align the form elements to the left */
+    }
+}
+/* Additional Custom Styles */
+.col-md-12 {
+    width: 100%; /* Set the width to 100% */
+}
+
+.form-control {
+    width: 100%; /* Set the width to 100% */
+    padding: 10px; /* Adjust padding as needed */
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    padding: 8px 16px; /* Adjust padding as needed */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}

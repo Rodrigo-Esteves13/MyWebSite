@@ -29,6 +29,11 @@ body {
     color: aliceblue;
     margin-top: 80px;
     text-align: center; /* Center the description text horizontally */
+    max-width: 70%; /* Limit the width of the image to 70% of the container */
+    margin-left: auto; /* Center the image by setting left margin to auto */
+    margin-right: auto; /* Center the image by setting right margin to auto */
+    overflow-x: hidden; /* Hide horizontal overflow */
+    overflow-y: auto; /* Enable vertical scrolling */
 }
 
 /* Add any additional styles as needed for other project details */
