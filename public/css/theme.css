@@ -65,7 +65,8 @@ body.dark-mode {
  .project-title.dark-mode,
  .project-description.dark-mode,
  .news-title.dark-mode,
- .news-description.dark-mode
+ .news-description.dark-mode,
+ .desktop-text.dark-mode
   {
      color: var(--text-color-dark);
  }
@@ -78,7 +79,8 @@ body.dark-mode {
  .project-title.light-mode,
  .project-description.light-mode,
  .news-title.light-mode,
- .news-description.light-mode
+ .news-description.light-mode,
+ .desktop-text.light-mode
  {
      color: var(--text-color-light);
  }

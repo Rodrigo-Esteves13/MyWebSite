@@ -6,10 +6,10 @@
     <title>REMS</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{ asset('css/header.blade.css') }}">
-    <link rel="stylesheet" href="{{ asset('scss/theme.scss') }}">
+    <link rel="stylesheet" href="{{ asset('css/theme.css') }}">
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     @include('layouts.popup')
     <link rel="stylesheet" href="{{ asset('css/popup.blade.css') }}">
 </head>
