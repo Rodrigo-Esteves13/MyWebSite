@@ -8,11 +8,12 @@ body {
 
 .email-container {
     max-width: 400px; /* Adjust the max-width as needed */
-    margin: 50px auto;
-    background-color: #ffffff;
-    padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.mailLabel {
+    color: #000;
 }
 
 .card {
@@ -28,24 +29,10 @@ body {
     border-radius: 5px;
 }
 
-.btn-primary {
-    background-color: #007bff;
-    color: #fff;
-    padding: 8px 12px; /* Adjust the padding to reduce the button height and width */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.btn-primary:hover {
-    background-color: #0056b3;
-}
-
 /* Mobile styles */
 @media (max-width: 768px) {
     .email-container {
-        margin: 20px;
-        padding: 10px;
+        margin-left: 100px;
     }
 
     .form-control {
@@ -90,7 +77,7 @@ body {
     border-radius: 5px;
 }
 
-.btn-primary {
+.resetSubmit {
     background-color: #007bff;
     color: #fff;
     padding: 8px 16px; /* Adjust padding as needed */
@@ -99,6 +86,6 @@ body {
     cursor: pointer;
 }
 
-.btn-primary:hover {
+.resetSubmit:hover {
     background-color: #0056b3;
 }
