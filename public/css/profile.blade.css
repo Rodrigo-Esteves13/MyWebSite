@@ -108,7 +108,12 @@
 }
 }
 
-  
+.form-group-border {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px; /* Adjust as needed for spacing */
+  margin-bottom: 15px; /* Adjust as needed for spacing */
+}
+
   .profile-table th,
   .profile-table td {
     padding: 10px;
