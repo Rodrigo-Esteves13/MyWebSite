@@ -7,19 +7,18 @@
     align-items: end;
     height: calc(100vh - 60px); /* Subtract the header height */
     text-align:center;
-    width: 130%;
   }
 
   .profile-table,
   .profile-card {
-    width: 60%; /* Adjusted width to 90% */
+    width: 74%;
     padding: 15px; /* Adjusted padding to 15px */
     background-color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-right: 103px; /* Adjusted margin to 5px */
     margin-bottom: 122px;
     border-style: solid;
     border-color: grey;
+    
   }
 
   .profile-table th,
