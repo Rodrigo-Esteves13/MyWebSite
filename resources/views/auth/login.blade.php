@@ -1,5 +1,6 @@
 @include('layouts.header')
 @include('layouts.sidebar')
+@include('layouts.footer')
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -14,8 +15,6 @@
 
 <body>
     <div class="login-container">
-        <div class="border"></div>
-        <div class="segment"></div>
         <div class="card">
             <div class="card-header">{{ __('Login') }}</div>
             <div class="card-body">
@@ -63,14 +62,12 @@
                         </div>
                     </div>
                     @if (Route::has('password.request'))
-                            <div class="text-center mt-3">
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    {{ __('Forgot Your Password?') }}
-                                </a>
-                            </div>
-                            @endif
-                        </div>
+                    <div class="text-center mt-3">
+                        <a class="btn btn-link" href="{{ route('password.request') }}">
+                            {{ __('Forgot Your Password?') }}
+                        </a>
                     </div>
+                    @endif
                 </form>
             </div>
         </div>
@@ -78,5 +75,3 @@
 </body>
 
 </html>
-
-@include('layouts.footer')

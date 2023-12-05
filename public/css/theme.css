@@ -30,11 +30,18 @@ body.dark-mode {
 .profile-table.light-mode,
 .project-item.light-mode,
 .news-item.light-mode,
+.card-header.light-mode,
+.card.light-mode,
+.step2-card.light-mode,
+.step2-card-header.light-mode,
 .change-password-table.light-mode
 {
     background-color: #FAF9F6;
     color: var(--text-color-light);
 }
+
+
+
 
 .header.dark-mode,
 .sidebar.dark-mode,
@@ -51,7 +58,11 @@ body.dark-mode {
 .profile-table.dark-mode,
 .project-item.dark-mode,
 .news-item.dark-mode,
-.change-password-table.dark-mode
+.card-header.dark-mode,
+.card.dark-mode,
+.change-password-table.dark-mode,
+.step2-card.dark-mode,
+.step2-card-header.dark-mode
  {
     background-color: #505050;
     color: var(--text-color-dark);

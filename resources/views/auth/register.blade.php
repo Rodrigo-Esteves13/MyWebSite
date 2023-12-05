@@ -12,8 +12,6 @@
 </head>
 <body>
     <div class="register-container">
-        <div class="border"></div>
-        <div class="segment"></div>
         <div class="card" id="step1">
             <div class="card-header">{{ __('Register') }}</div>
             <div class="card-body">
@@ -42,7 +40,7 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="username" class="col-md-4 col-form-label text-md-right">{{ __('Username') }}</label>
+                        <label for="username" class="col-md-4 col-form-label text-md-end">{{ __('Username') }}</label>
                         <div class="col-md-6">
                             <input id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>
                             @error('username')
@@ -62,8 +60,8 @@
             </div>
         </div>
 
-        <div class="card" id="step2" style="display: none;">
-            <div class="card-header">{{ __('Set Password') }}</div>
+        <div class="step2-card" id="step2" style="display: none;">
+            <div class="step2-card-header">{{ __('Set Password') }}</div>
             <div class="card-body">
                     @csrf
                     <div class="row mb-3">
@@ -85,6 +83,9 @@
                     </div>
                     <div class="row mb-0">
                         <div class="col-md-6 offset-md-4">
+                        <button type="button" class="btn btn-secondary" id="backStep">
+                            Back
+                        </button>
                             <button type="submit" class="btn btn-primary">
                                 {{ __('Register') }}
                             </button>
@@ -93,11 +94,14 @@
             </div>
         </div>
     </div>
-
     <script>
         document.getElementById('nextStep').addEventListener('click', function () {
         document.getElementById('step1').style.display = 'none';
         document.getElementById('step2').style.display = 'block';
+    });
+    document.getElementById('backStep').addEventListener('click', function () {
+        document.getElementById('step2').style.display = 'none';
+        document.getElementById('step1').style.display = 'block';
     });
     </script>
 </body>
